@@ -1,25 +1,48 @@
-# 🦴Peluditos Care🐾
-Plataforma que conecta a dueños de mascotas en México con cuidadores confiables y experimentados para brindarles atención y cariño en su ausencia.
+# Curso de JavaScript: JS-01 Tipos de datos y variables
 
+## Descripción
+Aprender cómo se almacenan los datos en la memoria y cómo manipular los diferentes tipos de datos.
 
----
+### Objetivos de aprendizaje
+- Explicar los tipos de datos.
+- Explicar los principales tipos de datos en JavaScript: string, boolean, number, array, object, undefined y null.
+- Explicar las variables.
+- Declarar variables con nombres significativos.
+- Explicar la conversión implícita y explícita(type casting),
+- Convertir una variable en un tipo number.
+- Convertir una variable en un tipo string.
+- Convertir una variable en un tipo boolean.
 
-## 🚀 Tecnologías a utilizar 
+## Estructura del proyecto
 
-- Frontend: HTML, CSS, JavaScript, Bootstrap  
-- Backend: Java / Spring Boot  
-- Base de datos: MySQL  
-- Control de version: Git / GitHub
+### 1. Carpeta: `public`
+Esta carpeta contiene recursos estáticos que serán accesibles públicamente en la aplicación web.
 
----
-## 👥 Colaboradores
-- Diego Eduardo Garza Rivera
-- Rubén Solares Hernández
-- Verónica Vázquez
-- Jenipher Andrea Mares De La Torre
-- Angeles Montserrat Buelna Fragoso
-- Luis Ernesto Romero Morales
-- Carlos Alberto Martinez Sandoval
-- Cristobal Lazcano Acevedo
-- Yessica Pérez Francisco
-- Jesus Adrian Oliva Vejar
+- **`fonts/`**: Almacena las fuentes personalizadas utilizadas en el diseño.
+- **`icons/`**: Contiene íconos para botones o elementos gráficos.
+- **`images/`**: Archivos de imágenes como logotipos, fondos o cualquier gráfico utilizado en el sitio.
+- **`json/`**: Archivos JSON que podrían almacenar datos estructurados para su consumo en la aplicación.
+
+### 2. Carpeta: `src`
+Contiene el código fuente principal de la aplicación, organizado en subcarpetas para mantener el código modular y reutilizable.
+
+#### Subcarpeta: `css`
+Archivos de estilos CSS globales o específicos de componentes, utilizados para dar diseño a la aplicación.
+
+#### Subcarpeta: `js`
+Archivos JavaScript globales o compartidos entre diferentes componentes de la aplicación.
+
+#### Subcarpeta: `modules`
+Dividida en módulos reutilizables que encapsulan funcionalidad específica.
+
+- **`footer/footer.js`**: Lógica y comportamiento del pie de página.
+- **`header/header.js`**: Lógica y comportamiento del encabezado o barra de navegación.
+
+### 3. Carpeta: `pages`
+Organiza las páginas individuales del sitio, con cada página teniendo su propio HTML, CSS y JS.
+
+### 4. Archivos en la raíz
+- **`index.html`**: Página principal de la aplicación, suele contener la estructura base y enlazar a los otros módulos y páginas.
+- **`.gitignore`**: Lista de archivos y carpetas que deben ser ignorados por Git.
+- **`README.md`**: Archivo de documentación que describe el proyecto, su propósito y cómo usarlo.
+
