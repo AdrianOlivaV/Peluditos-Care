@@ -5,35 +5,13 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Baloo 2", sans-serif;
   background-color: #f6faff;
   color: #333;
 }
 
-.header {
-  background-color: #113b5e;
-  color: white;
-  padding: 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.header .logo img {
-  height: 60px;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.header{
+  font-size: larger;
 }
 
 .bienvenida {
@@ -123,4 +101,10 @@ nav ul li a {
 .footer .redes img {
   width: 24px;
   height: 24px;
+}
+
+.baloo-2-Baloo> {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
