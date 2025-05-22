@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f6faff;
+  color: #333;
+}
+
+.header {
+  background-color: #113b5e;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header .logo img {
+  height: 60px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.bienvenida {
+  text-align: center;
+  padding: 2em;
+}
+
+.bienvenida h1 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.valores-mision-vision {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em;
+  background-color: #eafae5;
+}
+
+.card {
+  width: 30%;
+  min-width: 250px;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: #c4f0c5;
+  margin: 1em 0;
+}
+
+.card h2 {
+  margin-bottom: 0.5em;
+  color: #114e28;
+}
+
+.card ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.servicios {
+  text-align: center;
+  padding: 2em;
+  background-color: #e4f0fc;
+}
+
+.iconos-servicios {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.iconos-servicios div {
+  background-color: #cfe2f3;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.footer {
+  background-color: #a0d3ec;
+  text-align: center;
+  padding: 1em;
+}
+
+.footer .redes a {
+  margin: 0 10px;
+}
+
+.footer .redes img {
+  width: 24px;
+  height: 24px;
+}
