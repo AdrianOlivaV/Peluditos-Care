@@ -1,5 +1,5 @@
-const insertMainHeader = ( header )=>{
-    
+const insertMainHeader = ()=>{
+    const header = document.getElementById("header");
      header.innerHTML = `
     <nav class="navbar navbar-expand-lg py-2"
       style="background-color:#24527A">
@@ -40,5 +40,5 @@ const insertMainHeader = ( header )=>{
     </nav>
      `;
 }
-
-export default insertMainHeader;
+insertMainHeader();
+//export default insertMainHeader;
