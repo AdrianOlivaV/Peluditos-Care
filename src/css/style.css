@@ -15,16 +15,16 @@
 /* Estilos para la sección de bienvenida */
 .bienvenida {
   text-align: center;
-  padding: 2em;
+/*   padding: 1em; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 /* Modifica el tamaño del titulo de la pagina */
-h1 {
-  font-size: 2em;
-  font-weight: bold;
+#titulo {
+
+  font-family: var(--fuente-principal);
   margin-bottom: 1em;
 }
 /* Limita el tamaño del carrusel */
@@ -65,7 +65,8 @@ h1 {
   background-color: var(--color-tarjeta);
   margin: 1em 0;
   font-family: var(--fuente-principal);
-  font-size:22px ;
+  font-size:1.5em ;
+  text-align: justify;
 }
 /* Estilo del título dentro de cada tarjeta */
 .tarjeta h2 {
@@ -90,8 +91,7 @@ h1 {
 /* Título de la sección de servicios */
 .servicios h2 {
   font-family: var(--fuente-principal);
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 35px;
 }
 /* Contenedor de iconos de servicios */
 .iconos-servicios {
