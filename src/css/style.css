@@ -1,126 +1,129 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+.baloo-2{
+  font-family: "Baloo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f6faff;
-  color: #333;
+:root{
+  --color-tarjeta: #22c91652;
+  --color-icono-servicios: #96bde673;
+  --fuente-principal: "Baloo 2", sans-serif;
 }
 
-.header {
-  background-color: #113b5e;
-  color: white;
-  padding: 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.header .logo img {
-  height: 60px;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* Estilos para la sección de bienvenida */
 .bienvenida {
   text-align: center;
   padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-.bienvenida h1 {
-  font-size: 1.5em;
+/* Modifica el tamaño del titulo de la pagina */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
   margin-bottom: 1em;
 }
-
-.galeria {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+/* Limita el tamaño del carrusel */
+.carousel {
+  width: 100%;
+  max-width: 900px; /* o el ancho que quieras */
+  margin: 0 auto; /* centra horizontalmente */
+  overflow: hidden;
 }
 
-.galeria img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #ddd;
+/* Fija la altura y evita saltos al cambiar de imagen */
+.carousel-inner {
+  height: 450px; /* ajusta la altura deseada */
 }
 
+/* Aplica tamaño fijo y recorte a las imágenes */
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* recorta sin deformar */
+  display: block;
+
+} 
+/* Contenedor de tarjetas de valores, misión y visión */
 .valores-mision-vision {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 2em;
-  background-color: #eafae5;
-}
 
-.card {
+}
+/* Estilos de cada tarjeta individual */
+.tarjeta {
   width: 30%;
   min-width: 250px;
   padding: 1em;
   border-radius: 10px;
-  background-color: #c4f0c5;
+  background-color: var(--color-tarjeta);
   margin: 1em 0;
+  font-family: var(--fuente-principal);
+  font-size:22px ;
 }
-
-.card h2 {
+/* Estilo del título dentro de cada tarjeta */
+.tarjeta h2 {
+  text-align: center;
+  content:justify;
   margin-bottom: 0.5em;
   color: #114e28;
 }
-
-.card ul {
+/* Lista dentro de las tarjetas */
+.tarjeta ul {
   list-style: disc;
   margin-left: 20px;
+  
 }
-
+/* Contenedor de todos los servicios */
 .servicios {
   text-align: center;
   padding: 2em;
-  background-color: #e4f0fc;
-}
 
+  font-family: var(--fuente-principal);
+}
+/* Título de la sección de servicios */
+.servicios h2 {
+  font-family: var(--fuente-principal);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/* Contenedor de iconos de servicios */
 .iconos-servicios {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-top: 1em;
+  margin-top: 16px;
 }
-
+/* Cada icono de servicio */
 .iconos-servicios div {
-  background-color: #cfe2f3;
-  padding: 1em 1.5em;
-  border-radius: 10px;
-  font-weight: bold;
+
+  background-color: var(--color-icono-servicios);
+  padding: 22px;
+  border-radius: 50px;
+  font-size: 22px;
+  line-height:2px ;
+ text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+  width: 356px;
+  height: 102px;
+  display: flex;
+  flex-direction: column; /* 👈 Ícono arriba, texto abajo */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-.footer {
-  background-color: #a0d3ec;
-  text-align: center;
-  padding: 1em;
-}
 
-.footer .redes a {
-  margin: 0 10px;
 }
-
-.footer .redes img {
-  width: 24px;
-  height: 24px;
+/* Imagen dentro del icono de servicio */
+.iconos-servicios div img{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
