@@ -52,4 +52,4 @@ const insertMainFooter = (footer) =>{
     </footer>`;
 }
 
-export default insertMainFooter;
+export { insertMainFooter};

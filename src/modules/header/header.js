@@ -40,5 +40,5 @@ const insertMainHeader = ()=>{
     </nav>
      `;
 }
-insertMainHeader();
-//export default insertMainHeader;
+
+export {insertMainHeader};
