@@ -124,3 +124,22 @@ nav ul li a {
   width: 24px;
   height: 24px;
 }
+
+/* Styles Footer */
+
+:root {
+    --bg-footer: #5FBAD3;
+    --bg-body: #f8f8f8;
+}
+
+body{
+    background-color: var(--bg-body);
+}
+
+.bg-footer {
+    background-color: var(--bg-footer);
+}
+
+a {
+    text-decoration: none;
+}
