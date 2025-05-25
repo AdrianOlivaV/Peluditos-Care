@@ -20,9 +20,9 @@ body {
 }
 
 .quienes-somos section {
-  max-width: auto;
-  text
+  max-width: 800px;
 }
+  
 
 /*Esta parte aparece como error pero sirve NO MODIFICAR*/
 #h1-style,
@@ -120,9 +120,6 @@ img {
 .figcaption-nombres {
   margin-top: 0.5rem;
 }
-/*AGREGAR CÓDIGO DE FOTOS AQUI*/
-
-
 
 
 /* Esta parte es para que se pueda ver en el cel*/
