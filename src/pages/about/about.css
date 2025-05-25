@@ -1,0 +1,160 @@
+
+/* Tipografía principal */
+body {
+  font-family: 'Baloo 2', sans-serif;
+  color: #000000;
+  line-height: 1.6;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sección ¿Quiénes somos? */
+.quienes-somos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #f9f9f9;
+  text-align: justify;
+}
+
+.quienes-somos section {
+  max-width: auto;
+  text
+}
+
+/*Esta parte aparece como error pero sirve NO MODIFICAR*/
+#h1-style,
+.nuestro-equipo {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Párrafos */
+.fw-medium {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2e2e2e;
+  font-size: 1.2rem;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+/* Negrita */
+.fw-bold {
+  font-weight: 700;
+}
+
+/* Imagen de fondo */
+.fondo-animales {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.fondo-animales img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 10px solid black;
+}
+.equipo-section {
+  font-family: 'Baloo 2', sans-serif;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  background-image: url('../../../public/images/fondo-equipodirectivo.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+
+.nuestro-equipo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.equipo-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(71, 68, 68, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipo-grid article:nth-child(9) {
+  grid-column: 2;
+}
+
+.equipo-grid article:nth-child(10) {
+  grid-column: 3;
+}
+
+.figcaption-nombres {
+  margin-top: 0.5rem;
+}
+/*AGREGAR CÓDIGO DE FOTOS AQUI*/
+
+
+
+
+/* Esta parte es para que se pueda ver en el cel*/
+
+@media (max-width: 1024px) {
+  .equipo-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .equipo-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .equipo-grid img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nuestro-equipo {
+    font-size: 1.5rem;
+  }
+
+  .equipo-contenido {
+    padding: 2rem;
+  }
+}
+
