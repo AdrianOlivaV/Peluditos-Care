@@ -2,7 +2,7 @@ const insertMainHeader = ()=>{
     const header = document.getElementById("header");
      header.innerHTML = `
     <nav class="navbar navbar-expand-lg py-2"
-      style="background-color:#24527A">
+      style="background-color:#24527adc">
       <div class="container-fluid">
         <a class="navbar-brand ms-3" href="#">
           <img  src="/public/images/logo.png" width="150" height="" class="rounded-pill navbar-brand" alt="Logo" />
