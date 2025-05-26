@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-const insertMainFooter = (footer) =>{
-    footer.innerHTML = `
-    <footer class="bg-footer text-dark pt-5" style="background-color:#5fbad3cb; color: white; padding: 30px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-=======
-
-
 const insertMainFooter = (footer) => {
     footer.innerHTML = `<footer class="bg-footer text-dark pt-5">
->>>>>>> origin
         <div class="container px-2">
             <div class="row">
                 <div class="col-1">
@@ -55,7 +47,7 @@ const insertMainFooter = (footer) => {
                 <a class="text-light text-decoration-none" href="#"> Política de privacidad</a>
             </p>
         </div>
-    </footer>
-    `;
+    </footer>`;
 }
-export { insertMainFooter};
+
+export default insertMainFooter;
