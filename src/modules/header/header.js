@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const insertMainHeader = ()=>{
     const header = document.getElementById("header");
      header.innerHTML = `
+=======
+const insertMainHeader = (header) => {
+
+  header.innerHTML = `
+>>>>>>> origin
     <nav class="navbar navbar-expand-lg py-2"
       style="background-color:#24527adc">
       <div class="container-fluid">
