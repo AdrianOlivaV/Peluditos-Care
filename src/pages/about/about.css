@@ -1,20 +1,23 @@
 
-/* Tipografía principal */
 body {
   font-family: 'Baloo 2', sans-serif;
-  color: #000000;
+  color: #000;
   line-height: 1.6;
   background-color: #fff;
   margin: 0;
   padding: 0;
 }
 
-/* Sección ¿Quiénes somos? */
+h1, h2, h3, h4, h5 {
+  font-family: 'Baloo 2', sans-serif;
+}
+
+
 .quienes-somos {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 2rem;
   background-color: #f9f9f9;
   text-align: justify;
 }
@@ -22,58 +25,25 @@ body {
 .quienes-somos section {
   max-width: 800px;
 }
-  
 
-/*Esta parte aparece como error pero sirve NO MODIFICAR*/
 #h1-style,
 .nuestro-equipo {
-  font-family: 'Baloo 2', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: black;
   margin-bottom: 2rem;
   text-align: center;
+
 }
 
-/* Párrafos */
 .fw-medium {
   font-weight: 600;
   margin-bottom: 2rem;
   color: #2e2e2e;
   font-size: 1.2rem;
-  font-family: 'Baloo 2', sans-serif;
 }
 
-/* Negrita */
-.fw-bold {
-  font-weight: 700;
-}
-
-/* Imagen de fondo */
-.fondo-animales {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.fondo-animales img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  opacity: 0.3;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 10px solid black;
-}
+/* SECCIÓN DE EQUIPO DIRECTIVO  */
 .equipo-section {
   font-family: 'Baloo 2', sans-serif;
   position: relative;
@@ -82,14 +52,8 @@ img {
   padding: 2rem;
   background-image: url('../../../public/images/fondo-equipodirectivo.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center top;
-}
-
-.nuestro-equipo {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
 }
 
 .equipo-contenido {
@@ -99,14 +63,23 @@ img {
   background-color: rgba(71, 68, 68, 0.5);
   padding: 2rem;
   border-radius: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .equipo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.equipo-grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .equipo-grid article:nth-child(9) {
@@ -119,26 +92,37 @@ img {
 
 .figcaption-nombres {
   margin-top: 0.5rem;
+  color: white;
+  font-weight: 500;
 }
 
 
-/* Esta parte es para que se pueda ver en el cel*/
+.equipo-grid img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 
 @media (max-width: 1024px) {
   .equipo-grid {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equipo-grid article:nth-child(9),
+  .equipo-grid article:nth-child(10) {
+    grid-column: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .equipo-grid {
-    grid-template-columns: repeat(2, 1fr); 
+  .nuestro-equipo {
+    font-size: 1.8rem;
   }
-}
 
-@media (max-width: 480px) {
   .equipo-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .equipo-grid img {
@@ -146,12 +130,27 @@ img {
     height: 80px;
   }
 
+  .equipo-contenido {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
   .nuestro-equipo {
     font-size: 1.5rem;
   }
 
+  .equipo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipo-grid img {
+    width: 70px;
+    height: 70px;
+  }
+
   .equipo-contenido {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 

@@ -1,6 +1,6 @@
-const insertMainHeader = ( header )=>{
-    
-     header.innerHTML = `
+const insertMainHeader = (header) => {
+
+  header.innerHTML = `
     <nav class="navbar navbar-expand-lg py-2"
       style="background-color:#24527A">
       <div class="container-fluid">
