@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="./contact.css" />
+
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+    <div class="form-container">
+        <h2 class="text-center">¿Algo que decir? ¡woof! Contáctanos</h2>
+        <!-- Se agrega ID a formulario -->
+        <form id="form-Contacto">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono celular</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono celular">
+            </div>
+            <div class="mb-3">
+                <label for="motivo" class="form-label">Motivo de contacto</label>
+                <select class="form-select" id="motivo">
+                    <option selected>Selecciona una opción...</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="servicio">Servicio</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3" placeholder="Escribe tu mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+        <footer id="footer"></footer>
+
+    <!--scrip de boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Main custom JS -->
+    <script type="module" src="./contact.js"></script>
+</body>
+
+</html>
