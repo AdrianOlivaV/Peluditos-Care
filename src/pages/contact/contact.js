@@ -1,6 +1,6 @@
 import header from "../../modules/header/header.js";
 import footer from "../../modules/footer/footer.js";
-import leerInputsFormulario from "./leerInputFormularios.js"
+import { leerInputsFormulario } from "./leerInputFormularios.js";
 
 header(document.getElementById("header"));
 footer(document.getElementById("footer"));
