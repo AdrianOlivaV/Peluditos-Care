@@ -1,15 +1,12 @@
 const leerInputsFormulario = ( formulario )=>{
-    const newUser = {
-        name : formulario.elements["nombre"].value,
-        
-        firstName: formulario.elements["apellido"].value,
-        celNumber: formulario.elements["telefono"].value,
-        date:formulario.elements["motivo"].value,
-        description:formulario.elements["descripcion"].value,
-               
-        checkbox: formulario.elements["terminos-condiciones"].checked
+    const newConsult = {
+        nombre : formulario.elements["nombre"].value,
+        apellido : formulario.elements["apellido"].value,
+        celular : formulario.elements["telefono"].value,
+        motivo : formulario.elements["motivo"].value,
+        descripcion : formulario.elements["descripcion"].value
     }
-    console.table(newUser);
-    return newUser;
+    console.table(newConsult);
+    return newConsult;
 }
 export { leerInputsFormulario };
