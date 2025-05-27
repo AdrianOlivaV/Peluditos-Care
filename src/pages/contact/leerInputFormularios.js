@@ -1,11 +1,11 @@
 const leerInputsFormulario = ( formulario )=>{
     const newUser = {
-        name : formulario.elements["name"].value,
+        name : formulario.elements["nombre"].value,
         
-        firstName: formulario.elements["family-name"].value,
-        email: formulario.elements["email"].value,
-        password:formulario.elements[ "new-password"].value,
-        birthday:formulario.elements[ "bday"].value,
+        firstName: formulario.elements["apellido"].value,
+        celNumber: formulario.elements["telefono"].value,
+        date:formulario.elements["motivo"].value,
+        description:formulario.elements["descripcion"].value,
                
         checkbox: formulario.elements["terminos-condiciones"].checked
     }
