@@ -1,0 +1,35 @@
+body {
+    /* background-image: url('../../../public/images/perro.jpeg'); Reemplaza con la URL de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para el formulario */
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+}
+
+/* estilos de footer */
+:root {
+    --bg-footer: #5FBAD3;
+    --bg-body: #f8f8f8;
+}
+
+body{
+    background-color: var(--bg-body);
+}
+
+.bg-footer {
+    background-color: var(--bg-footer);
+}
+
+a {
+    text-decoration: none;
+}
