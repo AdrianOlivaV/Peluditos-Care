@@ -1,9 +1,22 @@
-import {insertMainHeader as menu} from "../../modules/header/header.js";
-menu(document.getElementById("header"));
+import header from "../../modules/header/header.js";
+import footer from "../../modules/footer/footer.js";
+import leerInputsFormulario from "./leerInputFormularios.js"
 
-import{insertMainFooter as footer} from "../../modules/footer/footer.js";
+header(document.getElementById("header"));
 footer(document.getElementById("footer"));
 
+//---------------------------------------------
 
-import {leerInputsFormulario as formulario} from "./leerInputFormularios.js"
-formulario(document.getElementById("formulario"));
+const registerFrom = document.getElementById("formulario");
+
+registerFrom.addEventListener("submit", async (e) => {
+    e.preventDefault(); // evita que se envíe el formulario
+    console.log("Manejo del formulario");
+
+    // Obtener los datos del formulario.
+    const newConsult = leerInputsFormulario(registerFrom);
+    //const validatedUser = isUserValid(newConsult);
+     console.log(newConsult);
+
+    
+});
