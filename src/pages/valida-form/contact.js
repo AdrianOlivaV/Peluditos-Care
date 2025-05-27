@@ -1,5 +1,6 @@
 import header from "../../modules/header/header.js";
-import footer from "../../modules/footer/footer.js"
+import footer from "../../modules/footer/footer.js";
+import {isUserValid} from "../../js/validations/isValidUser.js";
 import { leerInputsFormulario } from "./leerInputsFormulario.js";
 
 
@@ -16,8 +17,7 @@ registerFrom.addEventListener("submit", async (e) => {
 
     // Obtener los datos del formulario.
     const newConsult = leerInputsFormulario(registerFrom);
-    // const validatedUser = isUserValid(newConsult);
-    console.log(newConsult);
+    const validatedUser = isUserValid(newConsult);
 
     
 });
