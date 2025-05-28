@@ -1,4 +1,5 @@
 import { validateName } from "./validateName.js";
+import { validateLastName } from "./validateLastname.js";
 
 /**
  * 
@@ -10,16 +11,21 @@ const isUserValid = (user) => {
         isValid: true,
         errors: []
     };
-
+    //validacion del nombre
     const nameValidation = validateName(user.nombre);
 
-     /* 
-    Validar todos los atributos del usuario 
-    */
     if( nameValidation.isValid === false){
         result.isValid = false;
         result.errors.push(nameValidation.errors);
+    }   
+
+    //validacion del apellido
+    const lastNameValidate = validateLastName(user.apellido);
+    if( lastNameValidate.isValid === false){
+        result.isValid = false;
+        result.errors.push(lastNameValidate.errors);
     }
+
 }
 
 export {isUserValid};
