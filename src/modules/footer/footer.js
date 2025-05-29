@@ -1,5 +1,3 @@
-
-
 const insertMainFooter = (footer) => {
     footer.innerHTML = `<footer class="bg-footer text-dark pt-5">
         <div class="container px-2">
