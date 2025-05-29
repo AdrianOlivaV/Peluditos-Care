@@ -144,15 +144,7 @@
   height: 24px;
 }
 
-<<<<<<< HEAD
-.baloo-2-Baloo> {
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-=======
-=======
->>>>>>> origin
-/* Styles Footer */
+
 
 :root {
     --bg-footer: #5FBAD3;
@@ -169,8 +161,4 @@ body{
 
 a {
     text-decoration: none;
-<<<<<<< HEAD
->>>>>>> footer
-=======
->>>>>>> origin
 }
