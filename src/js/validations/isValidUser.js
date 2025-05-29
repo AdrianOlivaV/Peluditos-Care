@@ -2,6 +2,7 @@ import { validateName } from "./validateName.js";
 import { validateLastName } from "./validateLastname.js";
 import { validateTelefono } from "./validateTel.js";
 import { validateDescripction } from "./validateDescription.js";
+import { validateTerminosCondiciones } from "./validateCheck.js";
 
 /**
  * 
@@ -39,6 +40,13 @@ const isUserValid = (user) => {
     if( validateDescripction.isValid === false){
         result.isValid = false;
         result.errors.push(validateDescripction.errors);
+    }
+
+    //validacion del check
+    const check = validateTerminosCondiciones(user.check);
+    if(validateTerminosCondiciones.isUserValid === false){
+        result.isValid = false;
+        result.errors.push(validateTerminosCondiciones.errors)
     }
 
 }
