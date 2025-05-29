@@ -5,7 +5,7 @@ const validateLastName = (apellido) => {
         errors: []
     };
 
-    if( nombre === "" ){
+    if( apellido === "" ){
         result.isValid = false;
         alert("El apellido no debe estar vacío");
     } else if (apellido.length < 3) {
