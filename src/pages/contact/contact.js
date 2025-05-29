@@ -1,15 +1,14 @@
 import header from "../../modules/header/header.js";
 import footer from "../../modules/footer/footer.js";
-import {isUserValid} from "../../js/validations/isValidUser.js";
-import { leerInputsFormulario } from "./leerInputsFormulario.js";
-
+import { leerInputsFormulario } from "./leerInputFormularios.js";
+import { isUserValid } from "../../js/validations/isValidUser.js";
 
 header(document.getElementById("header"));
 footer(document.getElementById("footer"));
 
 //---------------------------------------------
 
-const registerFrom = document.getElementById("form-Contacto");
+const registerFrom = document.getElementById("formulario");
 
 registerFrom.addEventListener("submit", async (e) => {
     e.preventDefault(); // evita que se envíe el formulario
@@ -18,7 +17,7 @@ registerFrom.addEventListener("submit", async (e) => {
     // Obtener los datos del formulario.
     const newConsult = leerInputsFormulario(registerFrom);
     const validatedUser = isUserValid(newConsult);
+     console.log(newConsult);
 
     
 });
-

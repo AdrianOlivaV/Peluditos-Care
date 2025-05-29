@@ -128,7 +128,23 @@
   margin-right: 10px;
 }
 
-/* Styles Footer */
+
+/* .footer {
+  background-color: #a0d3ec;
+  text-align: center;
+  padding: 1em;
+}
+
+.footer .redes a {
+  margin: 0 10px;
+}
+
+.footer .redes img {
+  width: 24px;
+  height: 24px;
+}
+ */
+
 
 :root {
     --bg-footer: #5FBAD3;

@@ -1,0 +1,32 @@
+/* Ajustes para el formulario */
+.form-container {
+    max-width: 400px; /* Mantiene el formulario compacto */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background-image: url('../../../public/images/fondo-contact.png');
+    background-size: cover; /* Ajusta la imagen para que ocupe toda la pantalla sin recortes extraños */
+    background-position: right top; /* Coloca la imagen correctamente alineada */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+}
+
+/* Estilos footer */
+
+:root {
+    --bg-footer: #5FBAD3;
+    --bg-body: #f8f8f8;
+}
+
+.bg-footer {
+    background-color: var(--bg-footer);
+}
+
+a {
+    text-decoration: none;
+}
