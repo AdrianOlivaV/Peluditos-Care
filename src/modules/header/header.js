@@ -26,7 +26,7 @@ const insertMainHeader = (header) => {
               <a class="nav-link text-white fw-bold" href="/src/pages/about/about.html">¿Quiénes somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-bold" href="/src/pages/">Servicios</a>
+              <a class="nav-link text-white fw-bold" href="#">Servicios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white fw-bold" href="/src/pages/contact/contact.html">Contacto</a>
