@@ -29,6 +29,9 @@ const insertMainHeader = (header) => {
               <a class="nav-link text-white fw-bold" href="/src/pages/contact/contact.html">Contacto</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-white fw-bold" href="/src/pages/testimonies/testimonies.html">Testimonios</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-white fw-bold" href="/src/pages/location/location.html">Ubicación</a>
             </li>
             <li class="nav-item">
