@@ -2,30 +2,11 @@
     --bg-body: #ffffff;
     --card-bg: rgba(224, 247, 250, 0.95);
     --primary: #0d47a1;
-    --text-dark: #333;
+    --text-dark: #000000;
     --border-radius: 20px;
     --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-body {
-    background: url('fondo-dueños.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Baloo 2', cursive;
-    padding-bottom: 50px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary);
-}
-
-.bg-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 2rem;
-    height: 100%;
-}
 
 .formulario-owner {
     display: flex;
@@ -83,17 +64,6 @@ button[type="submit"]:hover {
     margin-top: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .formulario-owner {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .formulario-owner .form-section {
-        width: 90%;
-    }
-}
-
 
 /* estilos de footer */
 :root {
@@ -104,6 +74,7 @@ button[type="submit"]:hover {
 body{
     background-color: var(--bg-body);
 }
+
 
 .bg-footer {
     background-color: var(--bg-footer);
