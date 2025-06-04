@@ -28,8 +28,50 @@
                 class="banner col-12 img-fluid">
         </div>
     </div>
+     <div class="container my-5">
+        <form method="post" class="formulario-owner row justify-content-center g-4">
+            <div class="col-lg-5 bg-glass p-4 rounded-4 shadow">
+                <fieldset>
+                    <legend class="text-center fs-4 fw-bold">Registro de Dueño</legend>
+                    <h6 class="text-center mb-3"><em>Información del Dueño</em></h6>
+                    <input type="text" name="ownerName" placeholder="Nombre" class="form-control mb-3" required />
+                    <input type="number" name="ownerPhone" placeholder="Teléfono" class="form-control mb-3" required />
+                    <input type="email" name="ownerEmail" placeholder="Email" class="form-control mb-3" required />
+                    <input type="password" name="ownerPassword" placeholder="Contraseña" class="form-control mb-3" required />
+                    <h6 class="text-center mt-4 mb-2"><em>Dirección</em></h6>
+                    <input type="text" name="ownerAdress" placeholder="Calle/Número" class="form-control mb-3" required />
+                    <input type="text" name="ownerCity" placeholder="Ciudad" class="form-control mb-3" required />
+                    <input type="number" name="ownerZipCode" placeholder="Código Postal" class="form-control mb-3" required />
+                    <h6 class="text-center mt-4 mb-2"><em>Sobre el Dueño</em></h6>
+                    <textarea name="ownerAbout" placeholder="Sobre mí" class="form-control mb-3" rows="3" required></textarea>
+                    <div class="form-check mt-3 mb-3">
+                        <input class="form-check-input" type="checkbox" id="ownerTerms" required>
+                        <label class="form-check-label" for="ownerTerms">
+                            Acepto los <a href="#">Términos y Condiciones</a>
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-lg-5 bg-glass p-4 rounded-4 shadow">
+                <fieldset>
+                    <legend class="text-center fs-4 fw-bold">Registro de Mascota</legend>
+                    <h6 class="text-center mb-3"><em>Información de la Mascota</em></h6>
+                    <input type="text" name="petName" placeholder="Nombre de la mascota" class="form-control mb-3" required />
+                    <input type="text" name="petSpecies" placeholder="Especie (Perro, Gato, etc.)" class="form-control mb-3" required />
+                    <input type="text" name="petAttitude" placeholder="Comportamiento" class="form-control mb-3" required />
+                    <input type="number" name="petAge" placeholder="Edad" class="form-control mb-3" required />
+                    <textarea name="petDescription" placeholder="Descripción" class="form-control mb-3" rows="3" required></textarea>
+                    <h6 class="text-center mt-4 mb-2"><em>Foto de la Mascota</em></h6>
+                    <input type="file" name="petPhoto" accept="image/*" class="form-control mb-3" required />
+                </fieldset>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Registrar</button>
+            </div>
+        </form>
+    </div>
     <!-- Formulario de registro de dueño -->
-    <div class="row justify-content-center align-items-center vh-100">
+<!--     <div class="row justify-content-center align-items-center vh-100">
         <div class="col-lg-10 col-sm-9">
             <form method="post " class="formulario-owner row justify-content-center">
                 <div class="OonerData col-lg-5 col-md-5 col-sm-8 bg-glass">
@@ -83,9 +125,13 @@
                         <h6 class="text-center"><em>Foto de la mascota</em></h6>
                         <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3" required />
                     </fieldset>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Registrar</button>
+            </div>
             </form>
+
         </div>
-    </div>
+    </div> -->
     <footer id="footer"></footer>
     <script type="module" src="/src/pages/owner-register/owner.js"></script>
 </body>
