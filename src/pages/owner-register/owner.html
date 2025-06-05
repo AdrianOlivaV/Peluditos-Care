@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <!-- Importacion de estilos -->
     <link rel="stylesheet" href="/src/css/normalize.css">
-    <link rel="stylesheet" href="/src/pages/owner-register/owner.css">
+    <link rel="stylesheet" href="owner.css">
 
 </head>
 
@@ -83,11 +83,76 @@
                         <h6 class="text-center"><em>Foto de la mascota</em></h6>
                         <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3" required />
                     </fieldset>
+                
+
+<!-- Botón de envío -->
+<div class="text-center mt-4">
+  <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+</div>
+
+<!-- Cierre de etiquetas del formulario -->
+</form>
             </form>
         </div>
     </div>
     <footer id="footer"></footer>
     <script type="module" src="/src/pages/owner-register/owner.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", (e) => {
+            const ownerName = document.getElementById("ownerName").value.trim();
+            const ownerPhone = document.getElementById("ownerPhone").value.trim();
+            const ownerEmail = document.getElementById("ownerEmail").value.trim();
+            const ownerPassword = document.getElementById("ownerPassword").value.trim();
+            const ownerAdress = document.getElementById("ownerAdress").value.trim();
+            const ownerCity = document.getElementById("ownerCity").value.trim();
+            const ownerZipCode = document.getElementById("ownerZipCode").value.trim();
+            const ownerAbout = document.getElementById("ownerAbout").value.trim();
+            const ownerTerms = document.getElementById("ownerTerms").checked;
+
+            const petName = document.getElementById("petName").value.trim();
+            const petSpecies = document.getElementById("petSpecies").value.trim();
+            const petAttitude = document.getElementById("petAttitude").value.trim();
+            const petAge = document.getElementById("petAge").value.trim();
+            const petDescription = document.getElementById("petDescription").value.trim();
+            const petPhoto = document.getElementById("petPhoto").files.length;
+
+            // Validación básica
+            if (!ownerName || !ownerPhone || !ownerEmail || !ownerPassword ||
+                !ownerAdress || !ownerCity || !ownerZipCode || !ownerAbout ||
+                !petName || !petSpecies || !petAttitude || !petAge || !petDescription || !petPhoto) {
+                alert("Por favor completa todos los campos requeridos.");
+                e.preventDefault();
+                return;
+            }
+
+            // Validación email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(ownerEmail)) {
+                alert("Por favor ingresa un correo electrónico válido.");
+                e.preventDefault();
+                return;
+            }
+
+            // Validación edad
+            if (isNaN(petAge) || parseInt(petAge) < 0) {
+                alert("Por favor ingresa una edad válida para la mascota.");
+                e.preventDefault();
+                return;
+            }
+
+            // Aceptar términos
+            if (!ownerTerms) {
+                alert("Debes aceptar los Términos y Condiciones.");
+                e.preventDefault();
+                return;
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
