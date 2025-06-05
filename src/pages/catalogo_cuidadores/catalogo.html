@@ -14,28 +14,500 @@
     <link rel="stylesheet" href="../../css/normalize.css" />
     <!-- CSS Login -->
     <link rel="stylesheet" href="./catalogo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body>
-
     <header id="header"></header>
-
+    <!-- Barra de busqueda -->
     <div class="container">
-        <h1 class="ideal">Tenemos al cuidador ideal para tí</h1>
-        <div class="row justify-content-between">
-                <div class="search-container">
-                    <input type="text" class="form-control hs-search-field__input" placeholder="Search...">
-                    <button type="button" class="btn btn-dark buscar-boton">Buscar</button>
-                </div>
+        <h1 class="ideal text-center">Tenemos al cuidador ideal para tí. 🐾</h1>
+    </div>
+    <!-- Filtros -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="bi bi-funnel d-inline-block"> Buscar </h4>
+                <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle ms-3" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Ubicación
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">CDMX</a></li>
+                    <li><a class="dropdown-item" href="#">Guadalajara</a></li>
+                </ul>
+            </div>
+            </div>
         </div>
-        <footer id="footer"></footer>
+        <div class="row">
+            <div class="col-md-2">
+               <label for="sct_mascotas" class="form-label">Mascotas</label>
+               <select class="form-select" id="sct_mascotas" aria-label="Default select example">
+                    <option selected>Mascotas</option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                    <option value="3">Otro</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+               <label for="sct_tallas" class="form-label">Talla</label>
+               <select class="form-select" id="sct_tallas" aria-label="Default select example">
+                    <option selected>Talla</option>
+                    <option value="1">Pequeño 0-7 Kg</option>
+                    <option value="2">Mediano 7-18 kg</option>
+                    <option value="3">Grande 18-45 Kg</option>
+                    <option value="4">Gigante 45+ Kg</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+               <label for="sct_servicios" class="form-label">Tipo de servicio</label>
+               <select class="form-select" id="sct_servicios" aria-label="Default select example">
+                    <option selected>Tipo de servicio </option>
+                    <option value="1">Hospedaje</option>
+                    <option value="2">Guardería</option>
+                    <option value="3">Paseo</option>
+                    <option value="4">Visita en casa</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="fecha" class="form-label">Fecha inicio</label>
+                        <input type="date" class="form-control" id="fecha">    
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fecha" class="form-label">Fecha final</label>
+                        <input type="date" class="form-control" id="fecha"> 
+                    </div>
 
-        <!-- Bootstrap core JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        <!-- Custom JS -->
-        <script type="module" src="./catalogo.js"></script>
+                </div>
+                
+            </div>
+        </div>
+        
+       
+        <div>
+            
+        </div>
+    </div>
+
+    <!-- Tarjetas de cuidadores -->
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Jesus Oliva</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Luis Romero</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Rubén Solares</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Vero Vázquez</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Yessica Pérez</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Gregory House</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+         <div class="row mb-4">
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">James Willson</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Montse </h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Carlos Mtz.</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Cris Lazcano</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Diego Garza</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h5 class="font-weight-bold text-center">Jeni Mares</h5>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                            <li>
+                                <img class="review-pata"
+                                    src="https://cdn.iconscout.com/icon/free/png-512/free-paw-icon-download-in-svg-png-gif-file-formats--ionicons-solid-pack-miscellaneous-icons-459421.png?f=webp&w=256">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    </div>
+    <footer id="footer"></footer>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script type="module" src="./catalogo.js"></script>
 </body>
 
 </html>

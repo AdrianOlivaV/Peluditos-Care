@@ -24,3 +24,22 @@ input.hs-search-field__input {
     border: 1px solid #000;
     box-shadow: none;
 }
+
+.card {
+  border-radius: .7rem;
+  min-width: fit-content;
+  margin-top: 5%;
+}
+
+.review-pata{
+    height: 20px;
+    width: 22px;
+}
+
+.pagination{
+    margin-top: 2%;
+}
+
+.titulo{
+    margin-left: 5%;
+}
