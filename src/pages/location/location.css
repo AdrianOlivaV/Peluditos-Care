@@ -1,0 +1,49 @@
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.map-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-label {
+    font-family: 'Baloo 2', sans-serif;
+    margin-top: 10px;
+    background-color: #dfefff;
+    padding: 6px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
