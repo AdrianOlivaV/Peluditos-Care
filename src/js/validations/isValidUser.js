@@ -2,6 +2,8 @@ import { validateName } from "./validateName.js";
 import { validateLastName } from "./validateLastname.js";
 import { validateTelefono } from "./validateTel.js";
 import { validateDescripction } from "./validateDescription.js";
+import { validateTerminosCondiciones } from "./validateCheck.js";
+import { validateEmail } from "./validateEmail.js";
 
 /**
  * 
@@ -27,6 +29,13 @@ const isUserValid = (user) => {
         result.errors.push(lastNameValidate.errors);
     }
 
+    //validacion del correo
+    const emailValidate = validateEmail(user.correo);
+    if( emailValidate.isValid === false){
+        result.isValid = false;
+        result.errors.push(emailValidate.errors);
+    }
+
     //validacion del numero
     const telefonoValidate = validateTelefono(user.telefono);
     if( telefonoValidate.isValid === false){
@@ -36,9 +45,16 @@ const isUserValid = (user) => {
 
     //validacion de la descripcion 
     const validarDescripcion = validateDescripction(user.descripcion);
-    if( validateDescripction.isValid === false){
+    if( validarDescripcion.isValid === false){
         result.isValid = false;
         result.errors.push(validateDescripction.errors);
+    }
+
+    //validacion del check
+    const check = validateTerminosCondiciones(user.check);
+    if(check.isUserValid === false){
+        result.isValid = false;
+        result.errors.push(validateTerminosCondiciones.errors)
     }
 
 }

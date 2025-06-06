@@ -4,7 +4,7 @@ const insertMainHeader = (header) => {
     <nav class="navbar navbar-expand-lg py-2"
       style="background-color:#24527A">
       <div class="container-fluid">
-        <a class="navbar-brand ms-3" href="#">
+        <a class="navbar-brand ms-3" href="../../../index.html">
           <img  src="/public/images/logo.png" width="150" height="" class="rounded-pill navbar-brand" alt="Logo" />
         </a>
         <div class="d-flex align-items-end">
@@ -26,13 +26,13 @@ const insertMainHeader = (header) => {
               <a class="nav-link text-white fw-bold" href="/src/pages/about/about.html">¿Quiénes somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-bold" href="/src/pages/">Servicios</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-white fw-bold" href="/src/pages/contact/contact.html">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white fw-bold" href="#">Ubicación</a>
+              <a class="nav-link text-white fw-bold" href="/src/pages/testimonies/testimonies.html">Testimonios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fw-bold" href="/src/pages/location/location.html">Ubicación</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white fw-bold" href="/src/pages/login/login.html">Iniciar sesión / Registrarse</a>

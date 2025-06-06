@@ -6,7 +6,7 @@ const validateTelefono = (telefono) => {
 
     if( telefono === "" ){
         result.isValid = false;
-        alert("El campo no debe estar vacío");
+        alert("Ingresa un número de teléfono");
     }else if (/^\d{10}$/.test(telefono)) {
     } else{
     alert ( "Número inválido. Debe tener exactamente 10 dígitos.");
