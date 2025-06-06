@@ -1,13 +1,23 @@
-.background-radial-gradient {
-      background-image: url("../../../public/images/bg-login.avif"); 
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
+form {
+    font-family: 'Baloo 2', sans-serif;
+}
 
-    .bg-glass {
-      background-color: #d9d9d992;
-    }
+.background-radial-gradient {
+    background-image: url("../../../public/images/bg-login.avif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-glass {
+    background-color: #d9d9d992;
+}
+
+#btn-login, #btn-owner, #btn-care{
+    color: #f8f8f8;
+    background-color: #24527A;
+}
+
 
 /* estilos de footer */
 :root {
@@ -15,11 +25,12 @@
     --bg-body: #f8f8f8;
 }
 
-body{
+body {
     background-color: var(--bg-body);
 }
 
 .bg-footer {
+    font-family: 'Baloo 2', sans-serif;
     background-color: var(--bg-footer);
 }
 
