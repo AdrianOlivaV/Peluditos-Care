@@ -1,9 +1,51 @@
 import insertMainHeader from "../../modules/header/header.js";
 import footer from "../../modules/footer/footer.js";
-
+import { leerInputsForm } from "./leerinputsform.js";
+import { isNewRegisterValid } from "./Validations/validateOwnerRegister.js"; 
 insertMainHeader(document.getElementById("header"));
 footer(document.getElementById("footer"));
 
+//----------------------------------------------------------------
+//Vista previa de imagen de mascota
+
+const inputFoto = document.getElementById("petPhoto");
+const previewImg = document.getElementById("previewPetPhoto");
+
+inputFoto.addEventListener("change", () => {
+  const archivo = inputFoto.files[0];
+
+  if (archivo) {
+    const lector = new FileReader();
+
+    lector.onload = function (e) {
+      previewImg.src = e.target.result;
+      previewImg.style.display = "block"; // mostrar la imagen
+    };
+
+    lector.readAsDataURL(archivo); // lee el archivo como URL base64
+  } else {
+    previewImg.src = "";
+    previewImg.style.display = "none"; // oculta si no hay imagen
+  }
+});
+//-------------------------------------------------------------------
+// envio del formulario
+const ownerRegisterForm = document.getElementById("ownerForm");
+const user =leerInputsForm(ownerRegisterForm);
+console.log(user.nombre)
+
+ownerRegisterForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // evita que se envíe el formulario
+
+    // Obtener los datos del formulario.
+    const newRegister = leerInputsForm(ownerRegisterForm);
+    const validateRegister = isNewRegisterValid(newRegister);
+     console.log(newRegister);
+
+    
+});
+
+/* 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
@@ -123,4 +165,4 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
     });
-});
+}); */

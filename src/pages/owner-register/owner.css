@@ -27,12 +27,6 @@
     text-align: center;
 }
 
-.formulario-owner h6 {
-    font-weight: 600;
-    color: var(--text-dark);
-    text-align: center;
-}
-
 .formulario-owner input,
 .formulario-owner textarea {
     border-radius: 12px;
@@ -40,6 +34,21 @@
     border: 1px solid #ccc;
     font-family: 'Baloo 2', cursive;
     margin-bottom: 1rem;
+}
+#previewPetPhoto{
+    display: block;
+    margin: 0 auto;
+    max-width: 75%;
+    display: none; 
+    padding: 30px;
+    border-radius: 40px;
+}
+
+#terms {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  text-align: center;
 }
 
 button[type="submit"] {
