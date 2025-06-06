@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Fuente de google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Gloria+Hallelujah&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -22,68 +26,49 @@
 
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
-
+        <!-- Div que actua como contenedor y separa del header y footer-->
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-            <div class="row gx-lg-5 align-items-center mb-5">
+
+            <!-- se alinea a la derecha -->
+            <div class="row gx-lg-5 align-items-center mb-5 justify-content-end">
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
+                    <!-- Div con transparencia -->
                     <div class="card bg-glass">
+
+                        <!-- Div que le da espacio al contenido del form-->
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form>
+
+                            <!-- Formulario del login -->
+                            <form id="form-login">
                                 <h2> Estás a un paso de una de las experiencias más gratificantes de tu vida</h2>
 
-                                <!-- Email input -->
+                                <!-- Div del correo -->
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
-                                    <label class="form-label" for="form3Example3">Email</label>
+                                    <input type="email" id="email" class="form-control" required />
+                                    <label class="form-label" for="email">Correo</label>
                                 </div>
 
-                                <!-- Password input -->
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
-                                    <label class="form-label" for="form3Example4">Contraseña</label>
+                                <!-- Div de la contraseña -->
+                                <div data-mdb-input-init class="form-outline ">
+                                    <input type="password" id="password" class="form-control" required />
+                                    <label class="form-label" for="password">Contraseña</label>
                                 </div>
 
-                                <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-center mb-4">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
-                                        checked />
-                                    <label class="form-check-label" for="form2Example33">
-                                        Términos y Condiciones
-                                    </label>
+                                <!-- Botón de enviar -->
+                                <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                                    <button id="btn-login" class="btn" type="submit">Ingresar</button>
                                 </div>
 
-                                <!-- Submit button -->
-                                <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                    class="btn btn-primary btn-block mb-4">
-                                    Ingresar
-                                </button>
-
-                                <!-- Register buttons -->
+                                <!-- Botones de registro -->
                                 <div class="text-center">
-                                    <p>¿Aún no tienes cuenta? Regístrate</p>
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
+                                    <p>¿Aún no tienes cuenta? Elige una opción para regístrate</p>
+                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                        <a id="btn-owner" class="btn" type="button" href="#">Soy dueño</a>
 
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-github"></i>
-                                    </button>
+                                        <a id="btn-care" class="btn" type="button" href="#">Quiero ser cuidador</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>
