@@ -36,7 +36,7 @@
     margin-bottom: 1rem;
 }
 #previewPetPhoto{
-    display: block;
+/*     display: block; */
     margin: 0 auto;
     max-width: 75%;
     display: none; 

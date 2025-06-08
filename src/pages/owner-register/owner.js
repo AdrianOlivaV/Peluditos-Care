@@ -31,8 +31,8 @@ inputFoto.addEventListener("change", () => {
 //-------------------------------------------------------------------
 // envio del formulario
 const ownerRegisterForm = document.getElementById("ownerForm");
-const user =leerInputsForm(ownerRegisterForm);
-console.log(user.nombre)
+/* const user =leerInputsForm(ownerRegisterForm);
+console.log(user.nombre) */
 
 ownerRegisterForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // evita que se envíe el formulario
@@ -41,8 +41,6 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
     const newRegister = leerInputsForm(ownerRegisterForm);
     const validateRegister = isNewRegisterValid(newRegister);
      console.log(newRegister);
-
-    
 });
 
 /* 
