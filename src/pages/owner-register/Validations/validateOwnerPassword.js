@@ -7,12 +7,12 @@ const validateOwnerPassword = (password, confirmPassword) => {
     if (password.length < 8) {
         result.isValid = false;
         result.errors.push("La contraseña debe tener al menos 8 caracteres.");
-        alert("La contraseña debe tener al menos 8 caracteres.");
+/*         alert("La contraseña debe tener al menos 8 caracteres."); */
     } 
      if (password !== confirmPassword) {
         result.isValid = false;
         result.errors.push("Las contraseñas no coinciden.");
-        alert("Las contraseñas no coinciden.");
+/*         alert("Las contraseñas no coinciden."); */
     }
 
     return result;

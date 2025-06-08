@@ -9,15 +9,15 @@ const validateOwnerEmail = (correo) => {
     if (!correo.includes("@")) {
         result.isValid = false;
         result.errors.push("El correo debe incluir un '@'.");
-        alert("El correo debe incluir un '@'.");
+/*         alert("El correo debe incluir un '@'."); */
     } else if (!correo.includes(".")) {
         result.isValid = false;
         result.errors.push("El correo debe incluir un dominio con '.'.");
-        alert("El correo debe incluir un dominio con '.'.");
+/*         alert("El correo debe incluir un dominio con '.'."); */
     } else if (!emailRegex.test(correo)) {
         result.isValid = false;
         result.errors.push("Correo electrónico no válido.");
-        alert("Correo electrónico no válido.");
+/*         alert("Correo electrónico no válido."); */
     }
 
     return result;

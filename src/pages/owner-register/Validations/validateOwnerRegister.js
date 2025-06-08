@@ -11,7 +11,7 @@ import { validatePetPhoto } from "./validatePetPhoto.js";
  * 
  * @param {*} user 
  */
-
+//Valida que los datos ingresados a el formualrio sean correctos
 const isNewRegisterValid = (user) => {
     const result = {
         isValid: true,
@@ -58,7 +58,7 @@ const isNewRegisterValid = (user) => {
     const extraFieldsValidation = validateExtraFields(user);
     if (!extraFieldsValidation.isValid) {
         result.isValid = false;
-        result.errors.push(...passwordValidation.errors);
+        result.errors.push(...extraFieldsValidation.errors);
     }
     // Validación de foto de la mascota
     const petPhotoValidation = validatePetPhoto(user.imagenMascota);
@@ -66,6 +66,8 @@ const isNewRegisterValid = (user) => {
         result.isValid = false;
         result.errors.push(...petPhotoValidation.errors);
     }
+
+    return result;
 
 };
 

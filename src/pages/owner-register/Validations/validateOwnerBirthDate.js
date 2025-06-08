@@ -7,7 +7,7 @@ const validateOwnerBirthDate = (fecha) => {
     if (!fecha) {
         result.isValid = false;
         result.errors.push("Debes ingresar una fecha de nacimiento.")
-        alert("Debes ingresar una fecha de nacimiento.");
+/*         alert("Debes ingresar una fecha de nacimiento.") */;
         return result;
     } 
 
@@ -25,7 +25,7 @@ const validateOwnerBirthDate = (fecha) => {
     if (edad < 18) {
         result.isValid = false;
         result.errors.push("Debes ser mayor de edad (mínimo 18 años).")
-        alert("Debes ser mayor de edad (mínimo 18 años).");
+/*         alert("Debes ser mayor de edad (mínimo 18 años)."); */
     }
 
     return result;
