@@ -1,6 +1,7 @@
 import insertMainHeader from "../../modules/header/header.js";
 import footer from "../../modules/footer/footer.js";
 import testimoniesList from './testimoniesList.js';
+import { validateTestimonyFields } from "../../js/validationsTestimonies/validateTestimonyFields.js";
 
 insertMainHeader(document.getElementById("header"));
 footer(document.getElementById("footer"));
@@ -80,19 +81,44 @@ function editarPublicacion(index) {
    }
 }
 
-// Botón Agregar
-const btnAgreagr = document.getElementById("agregar-testimonio");
+// Botón Agregar desde el formulario
+const btnAgregar = document.getElementById("agregar-testimonio");
 
-btnAgreagr.addEventListener("click", () => {
-   const nuevoTestimonio = {
-      name: 'Prueba',
-      location: 'CDMX, Iztapalapa',
-      comment: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
-      type_service: 'Baño',
-      img: 'https://petsmileusa.com/cdn/shop/articles/healthy-pet-activities.png?v=1619548965'
-   };
-   agregarPublicacion(nuevoTestimonio);
+btnAgregar.addEventListener("click", () => {
+   const modal = new bootstrap.Modal(document.getElementById('modalFormulario'));
+   document.getElementById("formularioTestimonio").reset();
+   document.getElementById("alertaErrores").classList.add("d-none");
+   modal.show();
 });
+
+const formulario = document.getElementById("formularioTestimonio");
+formulario.addEventListener("submit", (e) => {
+   e.preventDefault();
+
+   const testimonio = {
+      name: document.getElementById("nombre").value.trim(),
+      location: document.getElementById("ubicacion").value.trim(),
+      comment: document.getElementById("comentario").value.trim(),
+      type_service: document.getElementById("tipoServicio").value.trim(),
+      img: document.getElementById("imagenURL").value.trim()
+   };
+
+   const alerta = document.getElementById("alertaErrores");
+   const validacion = validateTestimonyFields(testimonio);
+
+   if (!validacion.isValid) {
+      alerta.innerHTML = validacion.errors.join("<br>");
+      alerta.classList.remove("d-none");
+      return;
+   }
+
+   alerta.classList.add("d-none");
+   agregarPublicacion(testimonio);
+   bootstrap.Modal.getInstance(document.getElementById('modalFormulario')).hide();
+});
+
+
+
 
 // Botón Borrar Todo
 
