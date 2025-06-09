@@ -48,7 +48,7 @@
     <script type="module" src="./testimonies.js"></script>
 
     <!-- Modal de formulario -->
-     <!-- Este tipo de formulario se utiliza comúnmente para mostrar cuadros de diálogo que requieren 
+    <!-- Este tipo de formulario se utiliza comúnmente para mostrar cuadros de diálogo que requieren 
       una acción específica del usuario antes de continuar con la aplicación. -->
     <div class="modal fade" id="modalFormulario" tabindex="-1" aria-labelledby="modalFormularioLabel"
         aria-hidden="true">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <!-- Alert de error -->
+                    <!-- Alert de errores -->
                     <div class="alert alert-danger d-none" id="alertaErrores"></div>
 
                     <!-- Campos del formulario -->
@@ -81,7 +81,15 @@
 
                     <div class="mb-3">
                         <label for="tipoServicio" class="form-label">Tipo de Servicio</label>
-                        <input type="text" class="form-control" id="tipoServicio" required>
+                        <select class="form-select" id="tipoServicio" required>
+                            <option value="default" disabled selected>Selecciona un tipo</option>
+                            <option value="Paseo Matutino">Paseo Matutino</option>
+                            <option value="Paseo Nocturno">Paseo Nocturno</option>
+                            <option value="Hospedaje">Hospedaje</option>
+                            <option value="Guarderia">Guarderia</option>
+                            <option value="Visitas a domicilio">Visitas a domicilio</option>
+                            <option value="Baño">Baño</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
