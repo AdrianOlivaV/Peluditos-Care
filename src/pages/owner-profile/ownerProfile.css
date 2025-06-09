@@ -132,7 +132,43 @@ h6 {
     color: #0062cc;
 }
 
+.gallery-scroll {
+  max-height: 2000px;       /* Altura fija */
+  overflow-y: auto;        /* Scroll solo vertical si hay muchas imágenes */
+  padding-right: 10px;     /* Espacio para evitar que se coma contenido el scroll */
+}
 
+/* Estilo para las imágenes dentro de la galería */
+.gallery-scroll img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.comment-scroll {
+  max-height: 2000px;       
+  overflow-y: auto;        /* Scroll vertical si se necesita */
+  padding-right: 10px;
+}
+
+/* Espaciado entre comentarios */
+.comment-scroll .row {
+  margin-bottom: 20px;
+}
+
+/* Estilo para el corazón */
+.heart {
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Estilo cuando el corazón está activo*/
+.heart.active {
+  color: #24527A;
+}
 
 
 /* -----------------------------------------------------
