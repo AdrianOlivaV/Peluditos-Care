@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import insertMainHeader from '../../modules/header/header.js';
 import insertMainFooter from '../../modules/footer/footer.js';
 
@@ -20,10 +19,3 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn('Elemento con id="footer" no encontrado en el DOM.');
     }
 });
-=======
-import insertMainHeader from "../../modules/header/header.js";
-import footer from "../../modules/footer/footer.js";
-
-insertMainHeader(document.getElementById("header"));
-footer(document.getElementById("footer"));
->>>>>>> 288111b50d71af35848c59f1baaf9565451facdd
