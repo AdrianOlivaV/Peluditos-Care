@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Baloo 2', sans-serif;
   color: #000;
@@ -8,7 +7,11 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Baloo 2', sans-serif;
 }
 
@@ -157,19 +160,19 @@ h1, h2, h3, h4, h5 {
 /* Estilos footer */
 
 :root {
-    --bg-footer: #5fbad3cb;
-    --bg-body: #f8f8f8;
+  --bg-footer: #5FBAD3;
+  --bg-body: #f8f8f8;
 }
 
-body{
-    background-color: var(--bg-body);
+body {
+  background-color: var(--bg-body);
 }
 
 .bg-footer {
-    background-color: var(--bg-footer);
+  font-family: 'Baloo 2', sans-serif;
+  background-color: var(--bg-footer);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-

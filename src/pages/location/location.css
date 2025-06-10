@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 body {
   font-family: 'Baloo 2', sans-serif;
   color: #000;
@@ -15,6 +16,8 @@ body {
   font-weight: 900;
 
 }
+=======
+>>>>>>> 288111b50d71af35848c59f1baaf9565451facdd
 
 
 /* estilos de footer */
@@ -22,6 +25,10 @@ body {
     --bg-footer: #5FBAD3;
     --bg-body: #f8f8f8;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 288111b50d71af35848c59f1baaf9565451facdd
 body{
     background-color: var(--bg-body);
 }
@@ -29,6 +36,7 @@ body{
 .bg-footer {
     background-color: var(--bg-footer);
 }
+<<<<<<< HEAD
 a {
     text-decoration: none;
 }
@@ -108,3 +116,9 @@ a {
     height: 250px;
   }
 }
+=======
+
+a {
+    text-decoration: none;
+}
+>>>>>>> 288111b50d71af35848c59f1baaf9565451facdd
