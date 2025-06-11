@@ -32,8 +32,7 @@ inputFoto.addEventListener("change", () => {
 //-------------------------------------------------------------------
 // envio del formulario
 const ownerRegisterForm = document.getElementById("ownerForm");
-/* const user =leerInputsForm(ownerRegisterForm);
-console.log(user.nombre) */
+
 
 ownerRegisterForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // evita que se envíe el formulario
@@ -41,7 +40,7 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
     // Obtener los datos del formulario.
     const newRegister = leerInputsForm(ownerRegisterForm);
     const validateRegister = isNewRegisterValid(newRegister);
-    //console.log(newRegister); //muestra los datos del formualrio en consola
+
 
     //esta condicion evalua si los datos ingesados por el usuario son validos
     if(validateRegister.isValid){
@@ -57,7 +56,7 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
 
     }else{
         //Si los datos no son válidos, muestran los errores al usuario
-        /* alert(validateRegister.errors.join("\n")); */
+
         // Referencia al contenedor de errores
       const errorContainer = document.getElementById("alertError");
 

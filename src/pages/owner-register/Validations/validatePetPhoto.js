@@ -6,11 +6,11 @@ const validatePetPhoto = (file) => {
 
 
 
-    // Verifica el tipo de archivo
+    // Verifica que el tipo de archivo sea algun tipo de imagen
     if (!file.type.startsWith("image/")) {
         result.isValid = false;
         result.errors.push("El archivo seleccionado no es una imagen válida.");
-/*         alert("El archivo seleccionado no es una imagen válida."); */
+
     }
 
     return result;
