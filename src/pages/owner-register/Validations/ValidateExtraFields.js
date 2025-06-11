@@ -38,11 +38,11 @@ const validateExtraFields = (user) => {
         result.isValid = false;
         result.errors.push("Describe un poco más sobre ti (mínimo 10 caracteres).");
 /*         alert("Describe un poco más sobre ti (mínimo 10 caracteres)."); */
-    }else if (!/^[a-zA-Z0-9]+$/.test(user.sobreDueño)) {
+    }/* else if (!/^[a-zA-Z0-9]+$/.test(user.sobreDueño)) {
         result.isValid = false;
         result.errors.push("Tu descripción no debe contener caracteres especiales");
-/*         alert("Tu descripción no debe contener caracteres especiales"); */
-    }
+/*         alert("Tu descripción no debe contener caracteres especiales"); 
+    } */
 
     // Pet Name
     if (!user.nombreMascota || user.nombreMascota.length < 2) {
@@ -78,11 +78,11 @@ const validateExtraFields = (user) => {
         result.isValid = false;
         result.errors.push("Describe mejor a tu mascota (mínimo 10 caracteres).");
 /*         alert("Describe mejor a tu mascota (mínimo 10 caracteres)."); */
-    }else if (!/^[a-zA-Z0-9]+$/.test(user.descripcionMascota)) {
+    }/* else if (!/^[a-zA-Z0-9]+$/.test(user.descripcionMascota)) {
         result.isValid = false;
         result.errors.push("La descripción de tu mascota no debe contener caracteres especiales");
-/*         alert("La descripción de tu mascota no debe contener caracteres especiales"); */
-    }
+/*         alert("La descripción de tu mascota no debe contener caracteres especiales"); 
+    } */
 
     return result;
 };

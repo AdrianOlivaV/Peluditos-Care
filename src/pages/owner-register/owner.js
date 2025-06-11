@@ -41,23 +41,39 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
     // Obtener los datos del formulario.
     const newRegister = leerInputsForm(ownerRegisterForm);
     const validateRegister = isNewRegisterValid(newRegister);
-    console.log(newRegister); //muestra los datos ddel formualrio en consola
+    //console.log(newRegister); //muestra los datos del formualrio en consola
 
     //esta condicion evalua si los datos ingesados por el usuario son validos
     if(validateRegister.isValid){
          //si los datos son validos, se envia el formulario usando el api fetch
-/*         try{
+        try{
         //hacer el envio del formulario
             const response = await postNewRegister(newRegister, "https://reqres.in/api/users"); 
             alert("Formulario enviado correctamente " + response.createdAt);  
         }catch(error){
         //-Enviar al usuario el error del servidor en caso de que no se haya podido enviar el formulario
             alert("Error al enviar el formulario: " + error.message);
-        }  */
+        }  
 
     }else{
-        //Si los datos no son válidos, muestra un alert al usuario
-        alert(validateRegister.errors.join("\n"));
+        //Si los datos no son válidos, muestran los errores al usuario
+        /* alert(validateRegister.errors.join("\n")); */
+        // Referencia al contenedor de errores
+      const errorContainer = document.getElementById("alertError");
+
+      // Limpiar errores anteriores
+      alertError.innerHTML = "";
+
+      // Si hay errores, los mostramos en pantalla con el formato de alerta de Bootstrap
+      if (!validateRegister.isValid) {
+        validateRegister.errors.forEach(error => {
+          const errorDiv = document.createElement("div");
+          errorDiv.className = "alert alert-danger";
+          errorDiv.role = "alert";
+          errorDiv.textContent = error;
+          errorContainer.appendChild(errorDiv);
+        });
+      }
     }
 });
 
