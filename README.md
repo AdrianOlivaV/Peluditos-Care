@@ -1,4 +1,4 @@
-@@ -1 +1,25 @@
+
 # Peluditos-Care
 # 🦴Peluditos Care🐾
 Plataforma que conecta a dueños de mascotas en México con cuidadores confiables y experimentados para brindarles atención y cariño en su ausencia.
@@ -25,3 +25,7 @@ Plataforma que conecta a dueños de mascotas en México con cuidadores confiable
 - Cristobal Lazcano Acevedo
 - Yessica Pérez Francisco
 - Jesus Adrian Oliva Vejar
+
+---
+Nuestros cambios principalmente se erflejan en la rama Main.
+Las demas ramas son para el control internet de las distintas funcionalidades en las que se estan trabajando
