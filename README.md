@@ -27,5 +27,5 @@ Plataforma que conecta a dueños de mascotas en México con cuidadores confiable
 - Jesus Adrian Oliva Vejar
 
 ---
-Nuestros cambios principalmente se erflejan en la rama Main.
-Las demas ramas son para el control internet de las distintas funcionalidades en las que se estan trabajando
+Nuestros cambios principalmente se reflejan en la rama Main.
+Las demas ramas son para el control interno de las distintas funcionalidades en las que se estan trabajando
