@@ -4,90 +4,123 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Owner Registration Form</title>
     <!-- Importacion de estilos BootStrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-           <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <!-- Importacion de estilos -->
     <link rel="stylesheet" href="/src/css/normalize.css">
-    <link rel="stylesheet" href="/src/pages/owner-register/owner.css">
+    <link rel="stylesheet" href="owner.css">
 
 </head>
+<header id="header"></header>
 
 <body>
-    <header id="header"></header>
-    <!-- Imagen banner  -->
-    <div class="row">
-        <div class="banner col-12">
-            <img src="/public/images/owner/OWNER BANNER.jpg" alt="banner de registro de propietario"
-                class="banner col-12 img-fluid">
+
+    <main>
+        <!-- Imagen banner  -->
+        <div>
+            <div class="banner col-12">
+                <img src="/public/images/owner/OWNER BANNER.jpg" alt="banner de registro de propietario"
+                    class="w-100 img-fluid d-block">
+            </div>
         </div>
-    </div>
-    <!-- Formulario de registro de dueño -->
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-lg-10 col-sm-9">
-            <form method="post " class="formulario-owner row justify-content-center">
-                <div class="OonerData col-lg-5 col-md-5 col-sm-8 bg-glass">
+        <!-- Formulario de registro de dueño -->
+        <div class="container my-5">
+            <div class="text-center mb-2">
+                <h1>Ingresa tus datos</h1>
+            </div>
+            <form id="ownerForm" class="formulario-owner row justify-content-center mt-4">
+                <div class="OwnerData col-lg-5 col-md-5 col-sm-8 bg-glass  rounded-4 shadow">
                     <fieldset class="owner-info ">
-                        <legend class="text-center mb-4">Registro de dueño</legend>
-                        <h6 class="text-center"><em>Informacion del dueño</em></h6>
-                        <input type="text" id="ownerName" name="ownerName" placeholder="Nombre" class="form-control mb-3"
-                            required />
-                        <input type="number" name="ownerPhone" id="ownerPhone" placeholder="Teléfono" class="form-control mb-3"
-                            required />
-                        <input type="email" id="ownerEmail" name="ownerEmail" placeholder="Email" class="form-control mb-3"
-                            required />
-                        <input type="password" id="ownerPassword" name="ownerPassword" placeholder="Contraseña"
-                            class="form-control mb-3" required />
+                        <legend class="text-center mb-4">Informacion del dueño</legend>
+                        <label for="ownerName" class="form-label">Nombre/s</label>
+                        <input type="text" id="ownerName" name="ownerName" placeholder="Nombre/s" class="form-control mb-3" required />
+                        <label for="ownerLastName" class="form-label">Apellidos</label>
+                        <input type="text" id="ownerLastName" name="ownerLastName" placeholder="Apellidos" class="form-control mb-3" required />
+                        <label for="ownerBirthDate" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" id="ownerBirthDate" name="ownerBirthDate" placeholder="Fecha de nacimiento" class="form-control mb-3" required />
+                        <label for="ownerPhone" class="form-label">Teléfono</label>
+                        <input type="tel" name="ownerPhone" id="ownerPhone" placeholder="Teléfono" class="form-control mb-3" required />
+                        <label for="ownerEmail" class="form-label">Email</label>
+                        <input type="email" id="ownerEmail" name="ownerEmail" placeholder="example@email.com" class="form-control mb-3"  />
+                        <label for="ownerPassword" class="form-label">Contraseña</label>
+                        <input type="password" id="ownerPassword" name="ownerPassword" placeholder="Contraseña" class="form-control mb-3" required />
+                        <label for="confirmOwnerPassword" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" id="confirmOwnerPassword" name="confirmOwnerPassword" placeholder="Confirmar Contraseña" class="form-control mb-3" required />
                     </fieldset>
                     <fieldset class="owner-adrees">
                         <h6 class="text-center"><em>Dirección</em></h6>
-                        <input type="text" id="ownerAdress" name="ownerAdress" placeholder="Calle/Número" class="form-control mb-3"
-                            required />
-                        <input type="text" id="ownerCity" name="ownerCity" placeholder="Ciudad" class="form-control mb-3"
-                            required />
-                        <input type="number" id="ownerZipCode" name="ownerZipCode" placeholder="Código Postal"
-                            class="form-control mb-3" required />
+                        <label for="ownerAdrees" class="form-label">Calle/Número</label>
+                        <input type="text" id="ownerAdress" name="ownerAdress" placeholder="Calle/Número" class="form-control mb-3" required />
+                        <label for="ownerCity" class="form-label">Ciudad</label>
+                        <input type="text" id="ownerCity" name="ownerCity" placeholder="Ciudad" class="form-control mb-3" required />
+                        <label for="ownerZipCode" class="form-label">Código Postal</label>
+                        <input type="text" id="ownerZipCode" name="ownerZipCode" placeholder="Código Postal" class="form-control mb-3" required />
                     </fieldset>
                     <fieldset class="about-owner">
                         <h6 class="text-center"><em>Sobre el dueño</em></h6>
-                        <textarea id="ownerAbout" name="ownerAbout" placeholder="Sobre mí" class="form-control mb-3" rows="3"
-                            required></textarea>
+                        <textarea id="ownerAbout" name="ownerAbout" placeholder="Sobre mí" class="form-control mb-3" rows="3" required></textarea>
                     </fieldset>
-                    <fieldset class="owner-terms">
-                        <div class="form-check  mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="ownerTerms" required />
-                            <label class="form-check-label" for="ownerTerms">
-                                Acepto los <a href="/terms" class="text-decoration-none">Términos y Condiciones</a>
-                    </fieldset>
+                
                 </div>
-                <div class="petData col-lg-5 col-md-5 col-sm-8 bg-glass">
-                    <legend class="text-center mb-4">Registro de Mascota</legend>
-                    <h6 class="text-center"><em>Informacion de la mascota</em></h6>
-                    <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota" class="form-control mb-3"
-                        required />
-                    <input type="text" id="petSpecies" name="petSpecies" placeholder="Especie (Perro/Gato/otro)"
-                        class="form-control mb-3" required />
-                    <input type="text" id="petAttitude" name="petColor" placeholder="Comportamiento de la mascota"
-                        class="form-control mb-3" required />
-                    <input type="number" id="petAge" name="petAge" placeholder="Edad de la mascota" class="form-control mb-3"
-                        required />
-                    <textarea id="petDescription" name="petDescription" placeholder="Descripción de la mascota"
-                        class="form-control mb-3" rows="3" required></textarea>
-                    <fieldset class="pet-photo">
-                        <h6 class="text-center"><em>Foto de la mascota</em></h6>
-                        <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3" required />
-                    </fieldset>
+                <div class="petData col-lg-5 col-md-5 col-sm-8 bg-glass rounded-4 shadow">
+                    <legend class="text-center mb-4">Información de tu Mascota</legend>
+                    <fieldset class="pet-info">
+                        <label for="petName" class="form-label">Nombre de tu mascota</label>
+                        <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota" class="form-control mb-3" required />
+                        <label for="petSpecies" class="form-label">Tipo de mascota</label>
+                        <select name="petSpecies" id="petSpecies" class="form-select mb-3" required>
+                            <option value="" disabled selected>Selecciona el tipo de mascota</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Pez/Anfibios">Pez/Anfibios</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Roedor">Roedor</option>
+                            <option value="Reptil">Reptil</option>
+                            <option value="Insectos">Insectos</option>
+                        </select>
+                        <label for="petAttitude" class="form-label">Comportamiento</label>
+                        <input type="text" id="petAttitude" name="petColor" placeholder="Sociable / Tranquilo / Agresivo" class="form-control mb-3" required />
+                        <label for="petAge" class="form-label">Edad (años)</label>
+                        <input type="number" min="0" id="petAge" name="petAge" placeholder="Edad de la mascota" class="form-control mb-3" required />
+                        <label for="petDescription class=" form-label">Cuéntanos más sobre tu mascota</label>
+                        <textarea id="petDescription" name="petDescription" placeholder="Descripción de la mascota" class="form-control mb-3" rows="3" required></textarea>
+                        <fieldset class="pet-photo">
+                            <h6 class="text-center"><em>Foto de la mascota</em></h6>
+                            <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3" required />
+                            <img id="previewPetPhoto" alt="Vista previa" />
+                        </fieldset>
+                </div>
+                <div class="form-check col-4" id="terms">
+                    
+                    <label class="form-check-label" for="ownerTerms">Acepto los <a href="" class="text-decoration-none">Términos y
+                            Condiciones</a></label><input  class="form-check-input" type="checkbox" value="" id="ownerTerms" name="ownerTerms" required />
+                </div>
+                <div id="alertError">
+
+                </div>
+
+                <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Enviar</button>
+                </div>
+
             </form>
-        </div>
-    </div>
+
+    </main>
+
+        <!-- Footer -->
     <footer id="footer"></footer>
-    <script type="module" src="/src/pages/owner-register/owner.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script type="module" src="/src/pages/owner-register/owner.js"></script> 
 </body>
+
 
 </html>
