@@ -27,6 +27,7 @@ body{
 }
 
 .bg-footer {
+    font-family:'Baloo 2', sans-serif;
     background-color: var(--bg-footer);
 }
 a {
