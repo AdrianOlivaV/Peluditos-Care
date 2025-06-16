@@ -18,6 +18,10 @@ form {
     background-color: #24527A;
 }
 
+#alert-container {
+    margin-top: 10px;
+}
+
 
 /* estilos de footer */
 :root {
