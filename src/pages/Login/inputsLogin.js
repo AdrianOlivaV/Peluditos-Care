@@ -1,5 +1,5 @@
 
-const leerInputsLogin = ( formularioLogin )=>{
+const readInputsLogin = ( formularioLogin )=>{
     const newSesion = {
         email : formularioLogin.elements["email"].value,
         password : formularioLogin.elements["password"].value
@@ -8,4 +8,4 @@ const leerInputsLogin = ( formularioLogin )=>{
     return newSesion;
 }
 
-export { leerInputsLogin };
+export { readInputsLogin };
