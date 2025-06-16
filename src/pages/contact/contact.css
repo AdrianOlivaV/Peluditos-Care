@@ -2,10 +2,12 @@
 .form-container {
     max-width: 400px; /* Mantiene el formulario compacto */
     padding: 20px;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.15); /* Fondo blanco más transparente */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Efecto desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Contorno sutil */
+    
 }
 
 body {
