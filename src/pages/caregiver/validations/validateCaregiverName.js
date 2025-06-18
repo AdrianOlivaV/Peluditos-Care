@@ -4,38 +4,21 @@ const validateCaregiverName = (nombre) => {
         errors: []
     };
 
-    if (nombre.length < 3) {
-        const errorMsg = "El nombre debe tener al menos 3 caracteres";
-        result.isValid = false;
-        result.errors.push(errorMsg);
+    // Eliminar espacios al inicio y fin
+    const trimmedName = nombre.trim();
 
-    } else if (nombre.length > 30) {
-        const errorMsg = "El nombre no debe tener más de 30 caracteres";
+    if (trimmedName.length < 3) {
         result.isValid = false;
-        result.errors.push(errorMsg);
-
-    } else if (!/^[a-zA-Z0-9]+$/.test(nombre)) {
-        const errorMsg = "El nombre no debe contener caracteres especiales";
+        result.errors.push("El nombre debe tener al menos 3 caracteres");
+    } else if (trimmedName.length > 20) {
         result.isValid = false;
-        result.errors.push(errorMsg);
+        result.errors.push("El nombre no debe tener más de 20 caracteres");
+    } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(trimmedName)) {
+        result.isValid = false;
+        result.errors.push("El nombre solo debe contener letras y espacios, sin caracteres especiales");
     }
 
     return result;
 };
 
-const inputNombre = document.getElementById('nombre');
-const nombreError = document.getElementById('nombreError');
-
-inputNombre.addEventListener('blur', () => {
-    const nombre = inputNombre.value.trim();
-    const validation = validateCaregiverName(nombre);
-
-    if (!validation.isValid) {
-        inputNombre.classList.add('is-invalid');
-        nombreError.textContent = validation.errors.join('\n');
-    } else {
-        inputNombre.classList.remove('is-invalid');
-        nombreError.textContent = '';
-    }
-});
-
+export { validateCaregiverName };

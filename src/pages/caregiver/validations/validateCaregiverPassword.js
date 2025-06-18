@@ -4,26 +4,15 @@ const validateCaregiverPassword = (password, confirmPassword) => {
         errors: []
     };
 
-    if (!password) {
-        result.isValid = false;
-        result.errors.push("Debes ingresar una contraseña.");
-    } else {
-        if (password.length < 8) {
-            result.isValid = false;
-            result.errors.push("La contraseña debe tener al menos 8 caracteres.");
-        }
+    const trimmedPassword = password.trim();
+    const trimmedConfirm = confirmPassword.trim();
 
-        const secureRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
-        if (!secureRegex.test(password)) {
-            result.isValid = false;
-            result.errors.push("La contraseña debe incluir mayúsculas, minúsculas, números y un carácter especial.");
-        }
+    if (trimmedPassword.length < 8) {
+        result.isValid = false;
+        result.errors.push("La contraseña debe tener al menos 8 caracteres.");
     }
 
-    if (!confirmPassword) {
-        result.isValid = false;
-        result.errors.push("Debes confirmar la contraseña.");
-    } else if (password !== confirmPassword) {
+    if (trimmedPassword !== trimmedConfirm) {
         result.isValid = false;
         result.errors.push("Las contraseñas no coinciden.");
     }

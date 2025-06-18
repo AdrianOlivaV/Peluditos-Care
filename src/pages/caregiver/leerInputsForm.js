@@ -1,38 +1,38 @@
 const leerInputsForm = (formulario) => {
-    const newCaregiverData= {
-        nombre: formulario.elements["nombre"].value.trim(),
-        fechaNacimiento: formulario.elements["fechaNacimiento"].value,
-        idioma: formulario.elements["idioma"].value.trim(),
-        email: formulario.elements["email"].value.trim().toLowerCase(),
-        password: formulario.elements["password"].value.trim(),
-        confirmPassword: formulario.elements["confirmPassword"].value.trim(),
-        calle: formulario.elements["calle"].value.trim(),
-        numero: formulario.elements["numero"].value.trim(),
-        cp: formulario.elements["cp"].value.trim(),
-        municipio: formulario.elements["municipio"].value.trim(),
-        telefono: formulario.elements["telefono"].value.trim(),
-        sobreTi: formulario.elements["sobreTi"].value.trim(),
+  const newCaregiverRegister = {
+    firstName: formulario.elements["caregiverName"].value.trim(),
+    lastName: formulario.elements["caregiverLastName"].value.trim(),
+    birthDate: formulario.elements["caregiverBirthDate"].value,
+    email: formulario.elements["caregiverEmail"].value.trim().toLowerCase(),
+    phone: formulario.elements["caregiverPhone"].value.trim(),
+    password: formulario.elements["caregiverPassword"].value.trim(),
+    confirmPassword: formulario.elements["confirmCaregiverPassword"].value.trim(),
 
-        experiencia: formulario.elements["experiencia"].value,
-        aniosExp: formulario.elements["aniosExp"].value,
+    address: formulario.elements["caregiverAdress"].value.trim(),
+    city: formulario.elements["caregiverCity"].value.trim(),
+    zipCode: formulario.elements["caregiverZipCode"].value.trim(),
 
-        servicios: {
-            paseos: formulario.elements["paseos"].checked ? formulario.elements["tarifaPaseos"].value.trim() : null,
-            hospedaje: formulario.elements["hospedaje"].checked ? formulario.elements["tarifaHospedaje"].value.trim() : null,
-            cuidado: formulario.elements["cuidado"].checked ? formulario.elements["tarifaCuidado"].value.trim() : null,
-            visitas: formulario.elements["visitas"].checked ? formulario.elements["tarifaVisitas"].value.trim() : null,
-            especiales: formulario.elements["especiales"].checked ? formulario.elements["tarifaEspecial"].value.trim() : null,
-        },
+    about: formulario.elements["caregiverAbout"].value.trim(),
 
-        descripcionExp: formulario.elements["descripcionExp"].value.trim(),
-        disponibilidad: formulario.elements["disponibilidad"].value.trim(),
-        certificado: formulario.elements["certificado"].files[0] || null,
-        fotosServicios: formulario.elements["fotosServicios"].files || [],
-        terminos: formulario.elements["terminos"].checked
-    };
+    hasExperience: formulario.querySelector('input[name="experienciaCuidador"]:checked')?.value || "",
+    yearsOfExperience: formulario.elements["aniosExperiencia"].value.trim(),
+    experienceDescription: formulario.elements["descripcionExperiencia"].value.trim(),
+    availability: formulario.elements["disponibilidad"].value.trim(),
 
-    console.table(newCaregiverData);
-    return newCaregiverData;
+    walkRate: formulario.elements["tarifaPaseos"].value.trim(),
+    hostingRate: formulario.elements["tarifaHospedaje"].value.trim(),
+    homeCareRate: formulario.elements["tarifaDomicilio"].value.trim(),
+    homeVisitRate: formulario.elements["tarifaVisitas"].value.trim(),
+    specialPetsRate: formulario.elements["tarifaEspeciales"].value.trim(),
+
+    certificate: formulario.elements["certificado"].files[0] || null,
+    servicePhotos: Array.from(formulario.elements["fotosServicios"].files),
+
+    termsAccepted: formulario.elements["ownerTerms"].checked
+  };
+
+  console.table(newCaregiverRegister);
+  return newCaregiverRegister;
 };
 
-export default leerInputsForm;
+export { leerInputsForm };

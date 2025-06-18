@@ -4,40 +4,31 @@ const validateExtraFields = (user) => {
         errors: []
     };
 
-    // Validar calle
-    if (!user.calle || user.calle.length < 3) {
+    // Dirección
+    if (!user.address || user.address.length < 3) {
         result.isValid = false;
-        result.errors.push("La calle debe tener al menos 3 caracteres.");
+        result.errors.push("La dirección debe tener al menos 3 caracteres.");
     }
 
-    // Validar número (puede ser numérico o alfanumérico pero no vacío)
-    if (!user.numero || user.numero.length === 0) {
+    // Ciudad
+    if (!user.city || user.city.length < 3) {
         result.isValid = false;
-        result.errors.push("El número de domicilio es obligatorio.");
+        result.errors.push("La ciudad debe tener al menos 3 caracteres.");
+    } else if (!/^[a-zA-Z0-9\s]+$/.test(user.city)) {
+        result.isValid = false;
+        result.errors.push("La ciudad no debe contener caracteres especiales.");
     }
 
-    // Validar código postal (debe ser numérico y tener 5 dígitos)
-    if (!/^\d{5}$/.test(user.cp)) {
+    // Código Postal
+    if (!/^\d{4,6}$/.test(user.zipCode)) {
         result.isValid = false;
-        result.errors.push("El código postal debe tener 5 dígitos numéricos.");
+        result.errors.push("El código postal debe ser numérico y tener entre 4 y 6 dígitos.");
     }
 
-    // Validar municipio
-    if (!user.municipio || user.municipio.length < 3) {
+    // Sobre el cuidador
+    if (!user.about || user.about.length < 10) {
         result.isValid = false;
-        result.errors.push("El municipio debe tener al menos 3 caracteres.");
-    }
-
-    // Validar descripción sobre ti (opcional, pero si está debe tener mínimo 10 caracteres)
-    if (user.sobreTi && user.sobreTi.length > 0 && user.sobreTi.length < 10) {
-        result.isValid = false;
-        result.errors.push("La descripción sobre ti debe tener al menos 10 caracteres si decides escribir algo.");
-    }
-
-    // Validar términos y condiciones
-    if (!user.terminos) {
-        result.isValid = false;
-        result.errors.push("Debes aceptar los términos y condiciones.");
+        result.errors.push("Describe un poco más sobre ti (mínimo 10 caracteres).");
     }
 
     return result;

@@ -20,4 +20,4 @@ const postNewRegister = async ( user, url ) => {
     const data = await response.json(); 
     return data;
 }
-export default postNewRegister;
+export { postNewRegister };
