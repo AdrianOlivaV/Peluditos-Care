@@ -35,7 +35,7 @@
       <div class="text-center mb-2">
         <h1>Ingresa tus datos</h1>
       </div>
-      <form id="caregiver" class="formulario-caregiver row justify-content-center mt-4">
+      <form id="caregiverform" class="formulario-caregiver row justify-content-center mt-4">
         <div class="caregiverData col-lg-5 col-md-5 col-sm-8 bg-glass  rounded-4 shadow">
           <fieldset class="caregiver-info">
             <legend class="text-center mb-4">Informacion del cuidador</legend>
@@ -73,7 +73,7 @@
             <input type="text" id="caregiverZipCode" name="caregiverZipCode" placeholder="Código Postal"
               class="form-control mb-3" required />
           </fieldset>
-          <fieldset class="owner-info">
+          <fieldset class="about-caregiver">
             <h6 class="text-center"><em>Sobre el cuidador</em></h6>
             <textarea id="caregiverAbout" name="caregiverAbout" placeholder="Sobre mí" class="form-control mb-3"
               rows="3" required></textarea>
@@ -207,7 +207,11 @@
               class="text-decoration-none">Términos y Condiciones</a></label>
           <input class="form-check-input" type="checkbox" value="" id="caregiverTerms" name="caregiverTerms" required />
         </div>
-        <div id="alertError"></div>
+
+        <div id="alertError">
+
+        </div>
+
         <div class="col-12 text-center">
           <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Enviar</button>
         </div>

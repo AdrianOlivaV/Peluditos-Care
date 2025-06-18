@@ -1,26 +1,20 @@
 import insertMainHeader from "../../modules/header/header.js";
 import footer from "../../modules/footer/footer.js";
 import { leerInputsForm } from "./leerInputsForm.js";
-import { isNewRegisterValid } from "./validations/validateCaregiverRegister.js"; 
+import { isNewRegisterValid } from "./validations/validateCaregiverRegister.js";
 import { postNewRegister } from "./postNewRegister.js";
 
 insertMainHeader(document.getElementById("header"));
 footer(document.getElementById("footer"));
 
-const newLocal = "petPhoto";
-//----------------------------------------------------------------
-// Vista previa de imagen de mascota
-
-const inputFoto = document.getElementById(newLocal);
-const previewImg = document.getElementById("previewPetPhoto");
 
 
 // Envío del formulario
-const caregiverRegisterForm = document.getElementById("caregiverForm");
+const caregiverRegisterForm = document.getElementById("caregiverform");
 
 caregiverRegisterForm.addEventListener("submit", async (e) => {
   e.preventDefault(); // evita que se envíe el formulario
-  
+
   // Limpiar errores anteriores en pantalla
   const errorContainer = document.getElementById("alertError");
   errorContainer.innerHTML = "";
@@ -35,6 +29,8 @@ caregiverRegisterForm.addEventListener("submit", async (e) => {
     try {
       const response = await postNewRegister(newRegister, "https://reqres.in/api/users");
       alert("Formulario enviado correctamente " + response.createdAt);
+      //Limpiar formulario después de enviarlo correctamente
+      caregiverRegisterForm.reset();
     } catch (error) {
       // Enviar al usuario el error del servidor en caso de fallo
       alert("Error al enviar el formulario: " + error.message);

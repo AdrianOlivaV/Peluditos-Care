@@ -28,7 +28,7 @@ const leerInputsForm = (formulario) => {
     certificate: formulario.elements["certificado"].files[0] || null,
     servicePhotos: Array.from(formulario.elements["fotosServicios"].files),
 
-    termsAccepted: formulario.elements["ownerTerms"].checked
+    termsAccepted: formulario.elements["caregiverTerms"].checked
   };
 
   console.table(newCaregiverRegister);
