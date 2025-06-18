@@ -1,11 +1,10 @@
 
-const leerInputsLogin = ( formularioLogin )=>{
+const readInputsLogin = ( formularioLogin )=>{
     const newSesion = {
-        correo : formularioLogin.elements["email"].value,
+        email : formularioLogin.elements["email"].value,
         password : formularioLogin.elements["password"].value
     }
-    console.table(newSesion);
     return newSesion;
 }
 
-export { leerInputsLogin };
+export { readInputsLogin };
