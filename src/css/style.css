@@ -30,9 +30,11 @@
 /* Limita el tamaño del carrusel */
 .carousel {
   width: 100%;
-  max-width: 900px; /* o el ancho que quieras */
+  max-height: 1080px;
+  max-width: 520px; /* o el ancho que quieras */
   margin: 0 auto; /* centra horizontalmente */
   overflow: hidden;
+  border-radius: 20px;
 }
 
 /* Fija la altura y evita saltos al cambiar de imagen */
