@@ -1,24 +1,24 @@
 
 
-const validateName = (nombre) => {
+const validateName = (name) => {
     const result = {
         isValid: true,
         errors: []
     };
 
-    if( nombre === "" ){
+    if( name === "" ){
         result.isValid = false;
         alert("El nombre no debe estar vacío");
-    } else if (nombre.length < 3) {
+    } else if (name.length < 3) {
         result.isValid = false;
         alert("El nombre debe tener al menos 3 caracteres");
-    }else if(nombre.length > 20){
+    }else if(name.length > 20){
         result.isValid = false;
         alert("El nombre no debe tener mas de 20 caracteres");
-    }else if (!/^[a-zA-Z0-9]+$/.test(nombre)) {
+    }else if (!/^[a-zA-Z0-9]+$/.test(name)) {
         result.isValid = false;
         result.errors.push("El nombre no debe contener caracteres especiales");
-    } else if(nombre.charAt(0) !== nombre.charAt(0).toUpperCase()){
+    } else if(name.charAt(0) !== name.charAt(0).toUpperCase()){
         result.isValid = false;
         result.errors.push("La primera letra debe estar en mayúscula");
     }

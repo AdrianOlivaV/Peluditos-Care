@@ -1,4 +1,4 @@
-const validateTerminosCondiciones = (check) => {
+const validateTermsAndConditions = (check) => {
     const result = {
         isValid: true,
         errors: []
@@ -10,4 +10,4 @@ const validateTerminosCondiciones = (check) => {
     }
     return result;
 }
-export { validateTerminosCondiciones };
+export { validateTermsAndConditions };

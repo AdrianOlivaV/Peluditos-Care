@@ -1,8 +1,8 @@
 import { validateName } from "./validateName.js";
 import { validateLastName } from "./validateLastname.js";
-import { validateTelefono } from "./validateTel.js";
-import { validateDescripction } from "./validateDescription.js";
-import { validateTerminosCondiciones } from "./validateCheck.js";
+import { validateTelephone } from "./validateTel.js";
+import { validateDescription } from "./validateDescription.js";
+import { validateTermsAndConditions } from "./validateCheck.js";
 import { validateEmail } from "./validateEmail.js";
 
 /**
@@ -16,45 +16,45 @@ const isUserValid = (user) => {
         errors: []
     };
     //validacion del nombre
-    const nameValidation = validateName(user.nombre);
+    const nameValidation = validateName(user.name);
     if( nameValidation.isValid === false){
         result.isValid = false;
         result.errors.push(nameValidation.errors);
     }   
 
     //validacion del apellido
-    const lastNameValidate = validateLastName(user.apellido);
+    const lastNameValidate = validateLastName(user.lastName);
     if( lastNameValidate.isValid === false){
         result.isValid = false;
         result.errors.push(lastNameValidate.errors);
     }
 
     //validacion del correo
-    const emailValidate = validateEmail(user.correo);
+    const emailValidate = validateEmail(user.mail);
     if( emailValidate.isValid === false){
         result.isValid = false;
         result.errors.push(emailValidate.errors);
     }
 
     //validacion del numero
-    const telefonoValidate = validateTelefono(user.telefono);
-    if( telefonoValidate.isValid === false){
+    const telephoneValidate = validateTelephone(user.telephone);
+    if( telephoneValidate.isValid === false){
         result.isValid = false;
-        result.errors.push(telefonoValidate.errors);
+        result.errors.push(telephoneValidate.errors);
     }
 
     //validacion de la descripcion 
-    const validarDescripcion = validateDescripction(user.descripcion);
-    if( validarDescripcion.isValid === false){
+    const descriptionValidate = validateDescription(user.description);
+    if( descriptionValidate.isValid === false){
         result.isValid = false;
-        result.errors.push(validateDescripction.errors);
+        result.errors.push(validateDescription.errors);
     }
 
     //validacion del check
-    const check = validateTerminosCondiciones(user.check);
+    const check = validateTermsAndConditions(user.check);
     if(check.isUserValid === false){
         result.isValid = false;
-        result.errors.push(validateTerminosCondiciones.errors)
+        result.errors.push(validateTermsAndConditions.errors)
     }
 
 }
