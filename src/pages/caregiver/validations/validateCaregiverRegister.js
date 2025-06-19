@@ -10,7 +10,6 @@ import { validateCaregiverCertified } from "./validateCaregiverCertified.js";
 import { validateExperienceYears } from "./validateExperienceYears.js";
 import { validateExperienceDescription } from "./validateExperienceDescription.js";
 import { validateAvailability } from "./validateAvailability.js";
-import { validateServicePrice } from "./validateServicePrice.js";
 
 // Función principal que valida todo el registro del cuidador
 const isNewRegisterValid = (user) => {
@@ -81,23 +80,6 @@ const isNewRegisterValid = (user) => {
     result.isValid = false;
     result.errors.push(...availabilityValidation.errors);
   }
-
-  // Validar tarifas de servicios individualmente
-  const tarifas = [
-    user.walkRate,
-    user.hostingRate,
-    user.homeCareRate,
-    user.homeVisitRate,
-    user.specialPetsRate
-  ];
-
-  tarifas.forEach((tarifa, index) => {
-    const tarifaValidation = validateServicePrice(tarifa);
-    if (!tarifaValidation.isValid) {
-      result.isValid = false;
-      result.errors.push(`Error en la tarifa del servicio ${index + 1}: ${tarifaValidation.errors.join(", ")}`);
-    }
-  });
 
   // Validar campos extra adicionales
   const extraFieldsValidation = validateExtraFields(user);
