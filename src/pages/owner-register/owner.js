@@ -36,6 +36,9 @@ const ownerRegisterForm = document.getElementById("ownerForm");
 
 ownerRegisterForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // evita que se envíe el formulario
+      // Limpiar errores anteriores en pantalla
+    const errorContainer = document.getElementById("alertError");
+    errorContainer.innerHTML = "";
 
     // Obtener los datos del formulario.
     const newRegister = leerInputsForm(ownerRegisterForm);
@@ -49,9 +52,11 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
         //hacer el envio del formulario
             const response = await postNewRegister(newRegister, "https://reqres.in/api/users"); 
             alert("Formulario enviado correctamente " + response.createdAt);  
+            
         }catch(error){
         //-Enviar al usuario el error del servidor en caso de que no se haya podido enviar el formulario
             alert("Error al enviar el formulario: " + error.message);
+            
         }  
 
     }else{
