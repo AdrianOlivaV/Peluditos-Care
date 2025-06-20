@@ -9,9 +9,9 @@ footer(document.getElementById("footer"));
 // ======================================================================================
 
 //Mostrar las tarjetas de los testimonios
-function mostrarPublicaciones() {
-   const contenedor = document.getElementById("testimoniesCard");
-   contenedor.innerHTML = "";
+function showPublications() {
+   const container = document.getElementById("testimoniesCard");
+   container.innerHTML = "";
 
    testimoniesList.forEach((pub, index) => {
       const card = document.createElement("div");
@@ -25,86 +25,86 @@ function mostrarPublicaciones() {
                <p class="card-text">${pub.comment}</p>
             </div>
             <div class="card-footer text-center d-flex justify-content-center gap-2">
-               <button class="btn btn-sm btn-danger btn-borrar">Eliminar</button>
-               <button class="btn btn-sm btn-primary btn-editar">Editar</button>
+               <button class="btn btn-sm btn-primary btn-edit">Editar</button>
+               <button class="btn btn-sm btn-danger btn-delete">Eliminar</button>
             </div>
          </div>
       `;
 
       // Botón Eliminar
-      const btnEliminar = card.querySelector(".btn-borrar");
+      const btnDelete = card.querySelector(".btn-delete");
 
-      btnEliminar.addEventListener("click", () => {
-         borrarPublicacion(index);
+      btnDelete.addEventListener("click", () => {
+         deletePublication(index);
       });
 
       // Botón Editar
-      const btnEditar = card.querySelector(".btn-editar");
+      const btnEditar = card.querySelector(".btn-edit");
 
       btnEditar.addEventListener("click", () => {
-         editarPublicacion(index);
+         editPublication(index);
       });
 
       // Añade la tarjeta card al final del testimoniesCard, para que se muestre en la página.
-      contenedor.appendChild(card);
+      container.appendChild(card);
    });
 }
 
 // Añade una nueva publicación
-function agregarPublicacion(objeto) {
+function addPublication(objeto) {
    testimoniesList.push(objeto);
-   mostrarPublicaciones();
+   showPublications();
 }
 
 // Borra la tarjeta del testimonio
-function borrarPublicacion(index) {
+function deletePublication(index) {
    testimoniesList.splice(index, 1);
-   mostrarPublicaciones();
+   showPublications();
 }
 
 // Edita la publicación
-function editarPublicacion(index) {
+function editPublication(index) {
    const pub = testimoniesList[index]; // Testimonio a editar 
-   const nuevoNombre = prompt("Editar nombre:", pub.name);
-   const nuevoComentario = prompt("Editar comentario:", pub.comment);
-   const nuevoTipo = prompt("Editar tipo de servicio:", pub.type_service);
+   const newName = prompt("Editar nombre:", pub.name);
+   const newComment = prompt("Editar comentario:", pub.comment);
+   const newType = prompt("Editar tipo de servicio:", pub.type_service);
 
    // Valida que los compos no se cancelen en el promt y así evitar errores en la edición
-   if (nuevoNombre && nuevoComentario && nuevoTipo) {
+   if (newName && newComment && newType) {
       testimoniesList[index] = {
          ...pub, // copia todo lo que ya tenía el objeto 
-         name: nuevoNombre,
-         comment: nuevoComentario,
-         type_service: nuevoTipo
+         name: newName,
+         comment: newComment,
+         type_service: newType
       };
-      mostrarPublicaciones(); // Vuelve a mostrar las tarjetas
+      showPublications(); // Vuelve a mostrar las tarjetas
    }
 }
 
 // Botón Agregar desde el formulario
-const btnAgregar = document.getElementById("agregar-testimonio");
+const btnAdd = document.getElementById("add-testimonie");
 
-btnAgregar.addEventListener("click", () => {
-   const modal = new bootstrap.Modal(document.getElementById('modalFormulario'));
-   document.getElementById("formularioTestimonio").reset();
+btnAdd.addEventListener("click", () => {
+   const modal = new bootstrap.Modal(document.getElementById('modalForm'));
+   document.getElementById("formTestimonie").reset();
    document.getElementById("alertaErrores").classList.add("d-none");
    modal.show();
 });
 
-const formulario = document.getElementById("formularioTestimonio");
-formulario.addEventListener("submit", (e) => {
+const form = document.getElementById("formTestimonie");
+form.addEventListener("submit", (e) => {
    e.preventDefault();
 
-   const testimonio = {
-      name: document.getElementById("nombre").value.trim(),
-      location: document.getElementById("ubicacion").value.trim(),
-      comment: document.getElementById("comentario").value.trim(),
-      type_service: document.getElementById("tipoServicio").value.trim(),
-      img: document.getElementById("imagenURL").value.trim()
+   const testimonie = {
+      name: document.getElementById("name").value.trim(),
+      location: document.getElementById("location").value.trim(),
+      comment: document.getElementById("comment").value.trim(),
+      type_service: document.getElementById("typeService").value.trim(),
+      img: document.getElementById("imgURL").value.trim()
    };
 
    const alerta = document.getElementById("alertaErrores");
-   const validacion = validateTestimonyFields(testimonio);
+   const validacion = validateTestimonyFields(testimonie);
 
    if (!validacion.isValid) {
       alerta.innerHTML = validacion.errors.join("<br>");
@@ -113,8 +113,8 @@ formulario.addEventListener("submit", (e) => {
    }
 
    alerta.classList.add("d-none");
-   agregarPublicacion(testimonio);
-   bootstrap.Modal.getInstance(document.getElementById('modalFormulario')).hide();
+   addPublication(testimonie);
+   bootstrap.Modal.getInstance(document.getElementById('modalForm')).hide();
 });
 
 
@@ -122,14 +122,14 @@ formulario.addEventListener("submit", (e) => {
 
 // Botón Borrar Todo
 
-const btnEliminarTodo = document.getElementById("eliminar-todo");
+const btnDeleteAll = document.getElementById("delete-all");
 
-btnEliminarTodo.addEventListener("click", () => {
+btnDeleteAll.addEventListener("click", () => {
    if (confirm('¿Seguro que deseas borrar todos los testimonios?')) {
       testimoniesList.length = 0;
-      mostrarPublicaciones();
+      showPublications();
    }
 });
 
 // Mostrar al cargar
-document.addEventListener('DOMContentLoaded', mostrarPublicaciones);
+document.addEventListener('DOMContentLoaded', showPublications);
