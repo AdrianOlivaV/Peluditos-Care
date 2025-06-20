@@ -1,178 +1,230 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Registro de Cuidador</title>
-  <link rel="stylesheet" href="caregiver.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owner Registration Form</title>
+  <!-- Importacion de estilos BootStrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+  <!-- Importacion de estilos -->
+  <link rel="stylesheet" href="/src/css/normalize.css">
+  <link rel="stylesheet" href="caregiver.css">
+
 </head>
+<header id="header"></header>
 
 <body>
-  <header id="header"></header>
 
-  <div class="banner">
-    <img src="../../../public/images/banner-caregiver-form.jpg" alt="Banner con perros" />
-  </div>
-  <div class="container my-5">
-    <form id="caregiverForm" class="row g-5 justify-content-center">
-
-      <!-- Sección Información del cuidador -->
-      <div class="col-lg-5 section-box">
-        <h5><i class="bi bi-person-fill"></i> Información del cuidador</h5>
-
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control mb-3" id="nombre" placeholder="Nombre completo" required />
-
-        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
-        <input type="date" class="form-control mb-3" id="fechaNacimiento" required />
-        <div class="invalid-feedback" id="fechaError">Debes ser mayor de 18 años.</div>
-
-        <label for="idioma" class="form-label">Idiomas: </label>
-        <input type="text" class="form-control mb-3" id="idioma" placeholder="Español, Inglés, Italiano..." required />
-
-        <label for="email" class="form-label">Correo electrónico:</label>
-        <input type="email" class="form-control mb-3" id="email" placeholder="correo@ejemplo.com" required />
-
-        <label for="password" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control mb-3" id="password" placeholder="Contraseña" required />
-
-        <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
-        <input type="password" class="form-control mb-3" id="confirmPassword" placeholder="Repite la contraseña"
-          required />
-
-        <div class="row mb-3">
-          <div class="col">
-            <label for="calle" class="form-label">Calle:</label>
-            <input type="text" class="form-control" id="calle" placeholder="Calle" required />
-          </div>
-          <div class="col">
-            <label for="numero" class="form-label">Número:</label>
-            <input type="text" class="form-control" id="numero" placeholder="Número" required />
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col">
-            <label for="cp" class="form-label">C.P.:</label>
-            <input type="text" class="form-control" id="cp" placeholder="Código Postal (5 dígitos)" required />
-          </div>
-          <div class="col">
-            <label for="municipio" class="form-label">Municipio:</label>
-            <input type="text" class="form-control" id="municipio" placeholder="Municipio" required />
-          </div>
-        </div>
-
-        <label for="telefono" class="form-label">Teléfono:</label>
-        <input type="tel" class="form-control mb-3" id="telefono" placeholder="Teléfono" required />
-
-        <label for="sobreTi" class="form-label">Sobre ti:</label>
-        <textarea class="form-control" id="sobreTi" rows="3" placeholder="Cuéntanos sobre ti" required></textarea>
+  <main>
+    <!-- Imagen banner  -->
+    <div>
+      <div class="banner col-12">
+        <img src="/public/images/banner-caregiver-form.jpg" alt="banner de registro de cuidador"
+          class="w-100 img-fluid d-block">
       </div>
-
-      <!-- Sección Perfil profesional -->
-      <div class="col-lg-5 section-box">
-        <h5><i class="bi bi-briefcase-fill"></i> Perfil profesional</h5>
-
-        <p>¿Tienes experiencia como cuidador?</p>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="experiencia" id="expSi" value="si" required />
-          <label class="form-check-label" for="expSi">Sí</label>
-        </div>
-        <div class="form-check form-check-inline mb-3">
-          <input class="form-check-input" type="radio" name="experiencia" id="expNo" value="no" />
-          <label class="form-check-label" for="expNo">No</label>
-        </div>
-        <div>
-          <label for="aniosExp" class="form-label">Años de experiencia:</label>
-          <input type="number" class="form-control mb-3" id="aniosExp" placeholder="Años de experiencia" min="0" />
-        </div>
-        <label class="form-label">¿Qué servicios ofreces?</label>
-        <div class="row mb-3 align-items-center">
-          <div class="col-md-6 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" id="paseos" />
-            <label class="form-check-label me-3" for="paseos">Paseos</label>
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Tarifa ($)" id="tarifaPaseos" />
-          </div>
-        </div>
-
-        <div class="row mb-3 align-items-center">
-          <div class="col-md-6 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" id="hospedaje" />
-            <label class="form-check-label me-3" for="hospedaje">Hospedaje</label>
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Tarifa ($)" id="tarifaHospedaje" />
-          </div>
-        </div>
-
-        <div class="row mb-3 align-items-center">
-          <div class="col-md-6 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" id="cuidado" />
-            <label class="form-check-label me-3" for="cuidado">Cuidado en domicilio</label>
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Tarifa ($)" id="tarifaCuidado" />
-          </div>
-        </div>
-
-        <div class="row mb-3 align-items-center">
-          <div class="col-md-6 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" id="visitas" />
-            <label class="form-check-label me-3" for="visitas">Visitas a domicilio</label>
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Tarifa ($)" id="tarifaVisitas" />
-          </div>
-        </div>
-
-        <div class="row mb-3 align-items-center">
-          <div class="col-md-6 d-flex align-items-center">
-            <input type="checkbox" class="form-check-input me-2" id="especiales" />
-            <label class="form-check-label me-3" for="especiales">Cuidado especial</label>
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Tarifa ($)" id="tarifaEspecial" />
-          </div>
-        </div>
-
-        <label for="descripcionExp" class="form-label">Descripción breve de tu experiencia:</label>
-        <textarea class="form-control mb-3" id="descripcionExp"
-          placeholder="Descripción breve de tu experiencia"></textarea>
-
-        <label for="disponibilidad" class="form-label">Disponibilidad:</label>
-        <input type="text" class="form-control mb-3" placeholder="Disponibilidad" id="disponibilidad" />
-
-        <label for="certificado" class="form-label">Certificado (opcional):</label>
-        <input type="file" class="form-control mb-3" id="certificado" />
-
-        <label for="fotosServicios" class="form-label">Fotos de servicios (opcional):</label>
-        <input type="file" class="form-control mb-3" id="fotosServicios" multiple />
+    </div>
+    <!-- Formulario de registro de cuidador-->
+    <div class="container my-5">
+      <div class="text-center mb-2">
+        <h1>Ingresa tus datos</h1>
       </div>
-
-      <!-- Términos y botón guardar -->
-      <div class="col-12">
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="terminos" required />
-          <label class="form-check-label" for="terminos">
-            Acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#terminosModal">términos y condiciones</a>
-          </label>
+      <form id="caregiverform" class="formulario-caregiver row justify-content-center mt-4">
+         <div class="professionalProfile col-lg-5 col-md-6 col-sm-8 bg-glass rounded-4 shadow p-4">
+          <fieldset class="caregiver-info">
+            <legend class="text-center mb-4">Informacion del cuidador</legend>
+            <label for="caregiverName" class="form-label">Nombre/s</label>
+            <input type="text" id="caregiverName" name="caregiverName" placeholder="Nombre/s" class="form-control mb-3"
+              required />
+            <label for="caregiverLastName" class="form-label">Apellidos</label>
+            <input type="text" id="caregiverLastName" name="caregiverLastName" placeholder="Apellidos"
+              class="form-control mb-3" required />
+            <label for="caregiverBirthDate" class="form-label">Fecha de nacimiento</label>
+            <input type="date" id="caregiverBirthDate" name="caregiverBirthDate" placeholder="Fecha de nacimiento"
+              class="form-control mb-3" required />
+            <label for="caregiverPhone" class="form-label">Teléfono</label>
+            <input type="tel" id="caregiverPhone" name="caregiverPhone" placeholder="Teléfono" class="form-control mb-3"
+              required />
+            <label for="caregiverEmail" class="form-label">Email</label>
+            <input type="email" id="caregiverEmail" name="caregiverEmail" placeholder="example@email.com"
+              class="form-control mb-3" required />
+            <label for="caregiverPassword" class="form-label">Contraseña</label>
+            <input type="password" id="caregiverPassword" name="caregiverPassword" placeholder="Contraseña"
+              class="form-control mb-3" required />
+            <label for="confirmCaregiverPassword" class="form-label">Confirmar Contraseña</label>
+            <input type="password" id="confirmCaregiverPassword" name="confirCaregiverPassword"
+              placeholder="Confirmar Contraseña" class="form-control mb-3" required />
+          </fieldset>
+          <fieldset class="caregiver-adrees">
+            <h6 class="text-center"><em>Dirección</em></h6>
+            <label for="caregiverAdress" class="form-label">Calle/Número</label>
+            <input type="text" id="caregiverAdress" name="caregiverAdress" placeholder="Calle/Número"
+              class="form-control mb-3" required />
+            <label for="caregiverCity" class="form-label">Ciudad</label>
+            <input type="text" id="caregiverCity" name="caregiverCity" placeholder="Ciudad" class="form-control mb-3"
+              required />
+            <label for="caregiverZipCode" class="form-label">Código Postal</label>
+            <input type="text" id="caregiverZipCode" name="caregiverZipCode" placeholder="Código Postal"
+              class="form-control mb-3" required />
+          </fieldset>
+          <fieldset class="about-caregiver">
+            <h6 class="text-center"><em>Sobre el cuidador</em></h6>
+            <textarea id="caregiverAbout" name="caregiverAbout" placeholder="Sobre mí" class="form-control mb-3"
+              rows="3" required></textarea>
+          </fieldset>
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
-      </div>
-    </form>
-  </div>
 
+        <div class="professionalProfile col-lg-5 col-md-6 col-sm-8 bg-glass rounded-4 shadow p-4">
+          <fieldset>
+            <legend class="text-center mb-4">Perfil profesional</legend>
+            <!-- ¿Tienes experiencia como cuidador? -->
+            <div class="mb-3">
+              <label class="form-label d-block">¿Tienes experiencia como cuidador?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="experienciaCuidador" id="experienciaSi" value="si"
+                  required>
+                <label class="form-check-label" for="experienciaSi">Sí</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="experienciaCuidador" id="experienciaNo" value="no">
+                <label class="form-check-label" for="experienciaNo">No</label>
+              </div>
+            </div>
+
+            <!-- Años de experiencia -->
+            <div class="mb-3">
+              <label for="aniosExperiencia" class="form-label">Años de experiencia</label>
+              <input type="number" class="form-control" id="aniosExperiencia" name="aniosExperiencia" min="0"
+                placeholder="Ej. 2" required>
+            </div>
+
+            <!-- Servicios que ofrece -->
+            <div class="mb-4">
+              <label class="form-label">¿Qué servicios ofreces?</label>
+              <div class="row gy-2">
+                <!-- Servicio y tarifa -->
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="servicioPaseos" name="servicios[]"
+                      value="Paseos">
+                    <label class="form-check-label" for="servicioPaseos">Paseos</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <input type="number" class="form-control" id="tarifaPaseos" name="tarifaPaseos" placeholder="Tarifa $"
+                    min="0">
+                </div>
+
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="servicioHospedaje" name="servicios[]"
+                      value="Hospedaje">
+                    <label class="form-check-label" for="servicioHospedaje">Hospedaje</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <input type="number" class="form-control" id="tarifaHospedaje" name="tarifaHospedaje"
+                    placeholder="Tarifa $" min="0">
+                </div>
+
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="servicioDomicilio" name="servicios[]"
+                      value="Cuidado en domicilio">
+                    <label class="form-check-label" for="servicioDomicilio">Cuidado en domicilio</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <input type="number" class="form-control" id="tarifaDomicilio" name="tarifaDomicilio"
+                    placeholder="Tarifa $" min="0">
+                </div>
+
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="servicioVisitas" name="servicios[]"
+                      value="Visitas a domicilio">
+                    <label class="form-check-label" for="servicioVisitas">Visitas a domicilio</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <input type="number" class="form-control" id="tarifaVisitas" name="tarifaVisitas"
+                    placeholder="Tarifa $" min="0">
+                </div>
+
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="servicioEspeciales" name="servicios[]"
+                      value="Mascotas especiales">
+                    <label class="form-check-label" for="servicioEspeciales">Cuidado de mascotas especiales</label>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <input type="number" class="form-control" id="tarifaEspeciales" name="tarifaEspeciales"
+                    placeholder="Tarifa $" min="0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Descripción experiencia -->
+            <div class="mb-3">
+              <label for="descripcionExperiencia" class="form-label">Descripción breve de tu experiencia</label>
+              <textarea class="form-control" id="descripcionExperiencia" name="descripcionExperiencia" rows="3"
+                placeholder="Escribe tu experiencia con mascotas" required></textarea>
+            </div>
+
+            <!-- Disponibilidad -->
+            <div class="mb-4">
+              <label for="disponibilidad" class="form-label">Disponibilidad</label>
+              <input type="text" class="form-control" id="disponibilidad" name="disponibilidad"
+                placeholder="Ej. Lunes a Viernes - 9am a 6pm" required>
+            </div>
+
+            <!-- Certificado obligatorio -->
+            <div class="mb-3">
+              <label for="certificado" class="form-label">Coloca un certificado o carta de recomendación
+                (Obligatorio)</label>
+              <input type="file" class="form-control" id="certificado" name="certificado"
+                accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                required>
+            </div>
+
+            <!-- Fotos opcionales -->
+            <div class="mb-3">
+              <label for="fotosServicios" class="form-label">Sube fotos de tus servicios (Opcional)</label>
+              <input type="file" class="form-control" id="fotosServicios" name="fotosServicios" accept="image/*"
+                multiple>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-check col-4" id="terms">
+          <label class="form-check-label" for="caregiverTerms">Acepto los <a href=""
+              class="text-decoration-none">Términos y Condiciones</a></label>
+          <input class="form-check-input" type="checkbox" value="" id="caregiverTerms" name="caregiverTerms" required />
+        </div>
+
+        <div id="alertError">
+
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer id="footer"></footer>
-
-  <!-- Scripts externos -->
-  <script type="module" src="caregiver.js"></script>
-  <script src="caregiverValidation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <script type="module" src="/src/pages/caregiver/caregiver.js"></script>
 </body>
 
 </html>

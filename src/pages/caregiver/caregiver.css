@@ -1,3 +1,79 @@
+:root {
+    --bg-body: #ffffff;
+    --card-bg: rgba(224, 247, 250, 0.95);
+    --primary: #0d47a1;
+    --text-dark: #000000;
+    --border-radius: 20px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.formulario-caregiver {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.formulario-caregiver .form-section {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.formulario-caregiver legend {
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formulario-caregiver input,
+.formulario-caregiver textarea {
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: 'Baloo 2', cursive;
+    margin-bottom: 1rem;
+}
+#previewPetPhoto{
+/*     display: block; */
+    margin: 0 auto;
+    max-width: 75%;
+    display: none; 
+    padding: 30px;
+    border-radius: 40px;
+}
+
+#terms {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 40px;
+    border-radius: 12px;
+    color: white;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #08306b;
+}
+
+.button-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+
 /* estilos de footer */
 :root {
     --bg-footer: #5FBAD3;
@@ -8,125 +84,11 @@ body{
     background-color: var(--bg-body);
 }
 
+
 .bg-footer {
     background-color: var(--bg-footer);
 }
 
-body {
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', sans-serif;
+a {
+    text-decoration: none;
 }
-
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-body {
-  font-family: 'Baloo 2', sans-serif;
-  background-color: #f8f9fa;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-}
-
-.section-box {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
-}
-
-h5 {
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #495057;
-}
-
-label {
-  font-weight: 500;
-}
-
-.btn-primary {
-  background-color: #1b6ec2;
-  border: none;
-  font-weight: 600;
-  padding: 0.6rem 2rem;
-}
-
-.form-check-label {
-  font-weight: 400;
-}
-/* Fuente general */
-body {
-  font-family: 'Baloo 2', sans-serif;
-  background-color: #f8f9fa;
-}
-
-/* Banner */
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 250px;
-}
-
-/* Contenedor de los formularios */
-#caregiverForm {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-}
-
-/* Cada sección del formulario */
-.section-box {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  flex: 1 1 350px;
-  max-width: 500px;
-}
-
-/* Botón y términos centrados */
-.form-actions {
-  text-align: center;
-  width: 100%;
-  margin-top: 2rem;
-}
-
-/* Botón */
-button[type="submit"] {
-  padding: 0.5rem 2rem;
-  font-size: 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  #caregiverForm {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.col-12 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.col-12 .form-check {
-  margin-bottom: 1rem;
-}
-
-.col-12 .btn {
-  margin-top: 0.5rem;
-}
-

@@ -40,40 +40,52 @@
                     <fieldset class="owner-info ">
                         <legend class="text-center mb-4">Informacion del dueño</legend>
                         <label for="ownerName" class="form-label">Nombre/s</label>
-                        <input type="text" id="ownerName" name="ownerName" placeholder="Nombre/s" class="form-control mb-3" required />
+                        <input type="text" id="ownerName" name="ownerName" placeholder="Nombre/s"
+                            class="form-control mb-3" required />
                         <label for="ownerLastName" class="form-label">Apellidos</label>
-                        <input type="text" id="ownerLastName" name="ownerLastName" placeholder="Apellidos" class="form-control mb-3" required />
+                        <input type="text" id="ownerLastName" name="ownerLastName" placeholder="Apellidos"
+                            class="form-control mb-3" required />
                         <label for="ownerBirthDate" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" id="ownerBirthDate" name="ownerBirthDate" placeholder="Fecha de nacimiento" class="form-control mb-3" required />
+                        <input type="date" id="ownerBirthDate" name="ownerBirthDate" placeholder="Fecha de nacimiento"
+                            class="form-control mb-3" required />
                         <label for="ownerPhone" class="form-label">Teléfono</label>
-                        <input type="tel" name="ownerPhone" id="ownerPhone" placeholder="Teléfono" class="form-control mb-3" required />
+                        <input type="tel" name="ownerPhone" id="ownerPhone" placeholder="Teléfono"
+                            class="form-control mb-3" required />
                         <label for="ownerEmail" class="form-label">Email</label>
-                        <input type="email" id="ownerEmail" name="ownerEmail" placeholder="example@email.com" class="form-control mb-3" required />
+                        <input type="email" id="ownerEmail" name="ownerEmail" placeholder="example@email.com"
+                            class="form-control mb-3" required />
                         <label for="ownerPassword" class="form-label">Contraseña</label>
-                        <input type="password" id="ownerPassword" name="ownerPassword" placeholder="Contraseña" class="form-control mb-3" required />
+                        <input type="password" id="ownerPassword" name="ownerPassword" placeholder="Contraseña"
+                            class="form-control mb-3" required />
                         <label for="confirmOwnerPassword" class="form-label">Confirmar Contraseña</label>
-                        <input type="password" id="confirmOwnerPassword" name="confirmOwnerPassword" placeholder="Confirmar Contraseña" class="form-control mb-3" required />
+                        <input type="password" id="confirmOwnerPassword" name="confirmOwnerPassword"
+                            placeholder="Confirmar Contraseña" class="form-control mb-3" required />
                     </fieldset>
                     <fieldset class="owner-adrees">
                         <h6 class="text-center"><em>Dirección</em></h6>
                         <label for="ownerAdrees" class="form-label">Calle/Número</label>
-                        <input type="text" id="ownerAdress" name="ownerAdress" placeholder="Calle/Número" class="form-control mb-3" required />
+                        <input type="text" id="ownerAdress" name="ownerAdress" placeholder="Calle/Número"
+                            class="form-control mb-3" required />
                         <label for="ownerCity" class="form-label">Ciudad</label>
-                        <input type="text" id="ownerCity" name="ownerCity" placeholder="Ciudad" class="form-control mb-3" required />
+                        <input type="text" id="ownerCity" name="ownerCity" placeholder="Ciudad"
+                            class="form-control mb-3" required />
                         <label for="ownerZipCode" class="form-label">Código Postal</label>
-                        <input type="text" id="ownerZipCode" name="ownerZipCode" placeholder="Código Postal" class="form-control mb-3" required />
+                        <input type="text" id="ownerZipCode" name="ownerZipCode" placeholder="Código Postal"
+                            class="form-control mb-3" required />
                     </fieldset>
                     <fieldset class="about-owner">
                         <h6 class="text-center"><em>Sobre el dueño</em></h6>
-                        <textarea id="ownerAbout" name="ownerAbout" placeholder="Sobre mí" class="form-control mb-3" rows="3" required></textarea>
+                        <textarea id="ownerAbout" name="ownerAbout" placeholder="Sobre mí" class="form-control mb-3"
+                            rows="3" required></textarea>
                     </fieldset>
-                
+
                 </div>
                 <div class="petData col-lg-5 col-md-5 col-sm-8 bg-glass rounded-4 shadow">
                     <legend class="text-center mb-4">Información de tu Mascota</legend>
                     <fieldset class="pet-info">
                         <label for="petName" class="form-label">Nombre de tu mascota</label>
-                        <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota" class="form-control mb-3" required />
+                        <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota"
+                            class="form-control mb-3" required />
                         <label for="petSpecies" class="form-label">Tipo de mascota</label>
                         <select name="petSpecies" id="petSpecies" class="form-select mb-3" required>
                             <option value="" disabled selected>Selecciona el tipo de mascota</option>
@@ -86,40 +98,46 @@
                             <option value="Insectos">Insectos</option>
                         </select>
                         <label for="petAttitude" class="form-label">Comportamiento</label>
-                        <input type="text" id="petAttitude" name="petColor" placeholder="Sociable / Tranquilo / Agresivo" class="form-control mb-3" required />
+                        <input type="text" id="petAttitude" name="petColor"
+                            placeholder="Sociable / Tranquilo / Agresivo" class="form-control mb-3" required />
                         <label for="petAge" class="form-label">Edad (años)</label>
-                        <input type="number" min="0" id="petAge" name="petAge" placeholder="Edad de la mascota" class="form-control mb-3" required />
-                        <label for="petDescription" class= "form-label">Cuéntanos más sobre tu mascota</label>
-                        <textarea id="petDescription" name="petDescription" placeholder="Descripción de la mascota" class="form-control mb-3" rows="3" required></textarea>
+                        <input type="number" min="0" id="petAge" name="petAge" placeholder="Edad de la mascota"
+                            class="form-control mb-3" required />
+                        <label for="petDescription" class="form-label">Cuéntanos más sobre tu mascota</label>
+                        <textarea id="petDescription" name="petDescription" placeholder="Descripción de la mascota"
+                            class="form-control mb-3" rows="3" required></textarea>
                         <fieldset class="pet-photo">
                             <h6 class="text-center"><em>Foto de la mascota</em></h6>
-                            <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3" required />
+                            <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3"
+                                required />
                             <img id="previewPetPhoto" alt="Vista previa" />
                         </fieldset>
                 </div>
                 <div class="form-check col-4" id="terms">
-                    
-                    <label class="form-check-label" for="ownerTerms">Acepto los <a href="" class="text-decoration-none">Términos y
-                            Condiciones</a></label><input  class="form-check-input" type="checkbox" value="" id="ownerTerms" name="ownerTerms" required />
+
+                    <label class="form-check-label" for="ownerTerms">Acepto los <a href=""
+                            class="text-decoration-none">Términos y
+                            Condiciones</a></label><input class="form-check-input" type="checkbox" value=""
+                        id="ownerTerms" name="ownerTerms" required />
                 </div>
                 <div id="alertError">
 
                 </div>
 
                 <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Enviar</button>
+                    <button type="submit" class="btn btn-primary px-5 py-2 rounded-3">Enviar</button>
                 </div>
 
             </form>
 
     </main>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer id="footer"></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    <script type="module" src="/src/pages/owner-register/owner.js"></script> 
+    <script type="module" src="/src/pages/owner-register/owner.js"></script>
 </body>
 
 
