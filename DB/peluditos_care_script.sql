@@ -18,24 +18,10 @@ CREATE SCHEMA IF NOT EXISTS `peluditos_care` DEFAULT CHARACTER SET utf8mb4 COLLA
 USE `peluditos_care` ;
 
 -- -----------------------------------------------------
--- Table `peluditos_care`.`fee`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `peluditos_care`.`fee` (
-  `id_fee` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_service` BIGINT NOT NULL,
-  `amount` VARCHAR(50) NOT NULL,
-  `description` TEXT NOT NULL,
-  PRIMARY KEY (`id_fee`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
 -- Table `peluditos_care`.`caregiver_information`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `peluditos_care`.`caregiver_information` (
   `id_caregiver` BIGINT NOT NULL AUTO_INCREMENT,
-  `url_profile_picture` VARCHAR(400) NOT NULL,
   `name` VARCHAR(150) NOT NULL,
   `last_name` VARCHAR(150) NOT NULL,
   `birthdate` DATE NOT NULL,
@@ -43,16 +29,13 @@ CREATE TABLE IF NOT EXISTS `peluditos_care`.`caregiver_information` (
   `email` VARCHAR(50) NOT NULL,
   `password` VARCHAR(30) NOT NULL,
   `street` VARCHAR(100) NOT NULL,
+  `street_number` VARCHAR(100) NULL,
   `zip_code` VARCHAR(30) NOT NULL,
   `about_me` TEXT NOT NULL,
   `expertise` TINYINT NOT NULL,
   `years_of_experience` VARCHAR(20) NOT NULL,
-  `fk_fee` BIGINT NOT NULL,
-  PRIMARY KEY (`id_caregiver`, `fk_fee`),
-  INDEX `fk_Caregiver_information_Fee1_idx` (`fk_fee` ASC) VISIBLE,
-  CONSTRAINT `fk_fee`
-    FOREIGN KEY (`fk_fee`)
-    REFERENCES `peluditos_care`.`fee` (`id_fee`))
+  `url_profile_picture` VARCHAR(400) NOT NULL,
+  PRIMARY KEY (`id_caregiver`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -93,13 +76,34 @@ CREATE TABLE IF NOT EXISTS `peluditos_care`.`caregiver_reviews` (
   `fk_caregiver` BIGINT NOT NULL,
   PRIMARY KEY (`id_caregiver_review`),
   INDEX `fk_Caregiver_reviews_Owner_Information1_idx` (`fk_owner` ASC) VISIBLE,
-  INDEX `fk_Caregiver_reviews_Caregiver_information1_idx` (`fk_caregiver` ASC) VISIBLE,
-  CONSTRAINT `fk_caregiver_information`
-    FOREIGN KEY (`fk_caregiver`)
-    REFERENCES `peluditos_care`.`caregiver_information` (`id_caregiver`),
+  INDEX `fk_caregiver_reviews_caregiver_information1_idx` (`fk_caregiver` ASC) VISIBLE,
   CONSTRAINT `fk_owner_Information`
     FOREIGN KEY (`fk_owner`)
-    REFERENCES `peluditos_care`.`owner_information` (`id_owner`))
+    REFERENCES `peluditos_care`.`owner_information` (`id_owner`),
+  CONSTRAINT `fk_caregiver_reviews_caregiver_information1`
+    FOREIGN KEY (`fk_caregiver`)
+    REFERENCES `peluditos_care`.`caregiver_information` (`id_caregiver`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `peluditos_care`.`service_cost`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `peluditos_care`.`service_cost` (
+  `id_service_cost` BIGINT NOT NULL AUTO_INCREMENT,
+  `amount` VARCHAR(50) NOT NULL,
+  `description` TEXT NOT NULL,
+  `fk_caregiver` BIGINT NOT NULL,
+  PRIMARY KEY (`id_service_cost`, `fk_caregiver`),
+  INDEX `fk_service_cost_caregiver_information1_idx` (`fk_caregiver` ASC) VISIBLE,
+  CONSTRAINT `fk_service_cost_caregiver_information1`
+    FOREIGN KEY (`fk_caregiver`)
+    REFERENCES `peluditos_care`.`caregiver_information` (`id_caregiver`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -117,9 +121,9 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `peluditos_care`.`owner_information_has_caregiver_information`
+-- Table `peluditos_care`.`owner_caregiver_has_roles`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `peluditos_care`.`owner_information_has_caregiver_information` (
+CREATE TABLE IF NOT EXISTS `peluditos_care`.`owner_caregiver_has_roles` (
   `id_owner` BIGINT NOT NULL,
   `id_caregiver` BIGINT NOT NULL,
   `id_role` BIGINT NOT NULL,
@@ -173,8 +177,6 @@ CREATE TABLE IF NOT EXISTS `peluditos_care`.`pets` (
   `age` INT NOT NULL,
   `description` TEXT NOT NULL,
   `url_pet_picture` VARCHAR(400) NOT NULL,
-  `fk_pet_type` BIGINT NOT NULL,
-  `fk_size_pet` BIGINT NOT NULL,
   `fk_owner` BIGINT NOT NULL,
   PRIMARY KEY (`id_pets`, `fk_owner`),
   INDEX `fk_pets_owner_information1_idx` (`fk_owner` ASC) VISIBLE,
@@ -197,18 +199,18 @@ CREATE TABLE IF NOT EXISTS `peluditos_care`.`type_services` (
   `service_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fk_owner` BIGINT NOT NULL,
   `fk_caregiver` BIGINT NOT NULL,
-  `fk_fee` BIGINT NOT NULL,
-  PRIMARY KEY (`id_service`, `fk_owner`, `fk_caregiver`, `fk_fee`),
+  `fk_service_cost` BIGINT NOT NULL,
+  PRIMARY KEY (`id_service`, `fk_owner`, `fk_caregiver`, `fk_service_cost`),
   INDEX `fk_type_services_owner_information1_idx` (`fk_owner` ASC) VISIBLE,
-  INDEX `fk_type_services_caregiver_information1_idx` (`fk_caregiver` ASC, `fk_fee` ASC) VISIBLE,
+  INDEX `fk_type_services_caregiver_information1_idx` (`fk_caregiver` ASC, `fk_service_cost` ASC) VISIBLE,
   CONSTRAINT `fk_type_services_owner_information1`
     FOREIGN KEY (`fk_owner`)
     REFERENCES `peluditos_care`.`owner_information` (`id_owner`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_type_services_caregiver_information1`
-    FOREIGN KEY (`fk_caregiver` , `fk_fee`)
-    REFERENCES `peluditos_care`.`caregiver_information` (`id_caregiver` , `fk_fee`)
+    FOREIGN KEY (`fk_caregiver`)
+    REFERENCES `peluditos_care`.`caregiver_information` (`id_caregiver`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
