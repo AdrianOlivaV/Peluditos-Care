@@ -58,7 +58,7 @@ loginForm.addEventListener("submit", async (e) => {
 
         // Redirigir después de 2 segundos
         setTimeout(() => {
-            redirectPage("../../../index.html");
+            redirectPage("../owner-profile/ownerProfile.html");
         }, 2000);
     } 
 });

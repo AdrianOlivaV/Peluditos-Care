@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Testimonios</title>
     <!-- Fuente de google -->
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Gloria+Hallelujah&family=Silkscreen:wght@400;700&display=swap"
@@ -29,8 +29,8 @@
 
         <!-- Botones -->
         <div class="mb-4 d-flex gap-2 justify-content-end">
-            <button id="agregar-testimonio" class="btn btn-success">Agregar uno nuevo</button>
-            <button id="eliminar-todo" class="btn btn-danger">Borrar todo</button>
+            <button id="add-testimonie" class="btn btn-success">Agregar uno nuevo</button>
+            <button id="delete-all" class="btn btn-danger">Borrar todo</button>
         </div>
 
         <!-- Contenedor de tarjetas -->
@@ -50,10 +50,10 @@
     <!-- Modal de formulario -->
     <!-- Este tipo de formulario se utiliza comúnmente para mostrar cuadros de diálogo que requieren 
       una acción específica del usuario antes de continuar con la aplicación. -->
-    <div class="modal fade" id="modalFormulario" tabindex="-1" aria-labelledby="modalFormularioLabel"
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormularioLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form class="modal-content needs-validation" id="formularioTestimonio" novalidate>
+            <form class="modal-content needs-validation" id="formTestimonie" novalidate>
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalFormularioLabel">Nuevo Testimonio</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -65,23 +65,23 @@
 
                     <!-- Campos del formulario -->
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" required>
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="ubicacion" class="form-label">Ubicación</label>
-                        <input type="text" class="form-control" id="ubicacion" required>
+                        <label for="location" class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="location" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="comentario" class="form-label">Comentario</label>
-                        <textarea class="form-control" id="comentario" rows="3" required></textarea>
+                        <label for="comment" class="form-label">Comentario</label>
+                        <textarea class="form-control" id="comment" rows="3" required></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="tipoServicio" class="form-label">Tipo de Servicio</label>
-                        <select class="form-select" id="tipoServicio" required>
+                        <label for="typeService" class="form-label">Tipo de Servicio</label>
+                        <select class="form-select" id="typeService" required>
                             <option value="default" disabled selected>Selecciona un tipo</option>
                             <option value="Paseo Matutino">Paseo Matutino</option>
                             <option value="Paseo Nocturno">Paseo Nocturno</option>
@@ -93,13 +93,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="imagenURL" class="form-label">URL de Imagen</label>
-                        <input type="url" class="form-control" id="imagenURL" required>
+                        <label for="imgURL" class="form-label">URL de Imagen</label>
+                        <input type="url" class="form-control" id="imgURL" required>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Guardar Testimonio</button>
+                    <button type="submit" id="btn-save-testimonie" class="btn btn-success">Guardar Testimonio</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </form>

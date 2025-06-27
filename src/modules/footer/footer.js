@@ -14,19 +14,13 @@ const insertMainFooter = (footer) => {
                 <div class="col">
                     <h4>Seguridad y Privacidad</h4>
                     <ul class="list-unstyled pt-2">
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
+                        <a href="../../pages/seguridad-y-privacidad/seguridad-y-privacidad.html"><li class="py-1">Seguridad y Privacidad</li></a>
                     </ul>
                 </div>
                 <div class="col">
                     <h4>Confianza y Transparencia</h4>
                     <ul class="list-unstyled pt-2">
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
-                        <a href="#"><li class="py-1">Link</li></a>
+                        <a href="../../pages/confianza-y-transparencia/confianza-y-transparencia.html"><li class="py-1">Confianza y Transparencia</li></a>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
@@ -43,8 +37,8 @@ const insertMainFooter = (footer) => {
         <div class="px-5 d-sm-flex justify-content-around py-1">
             <p>© 2025 Peluditos Care. Todos los derechos reservados. </p>
             <p>
-                <a class="text-light text-decoration-none pe-4" href="#">Términos de uso</a>
-                <a class="text-light text-decoration-none" href="#"> Política de privacidad</a>
+                <a class="text-light text-decoration-none pe-4" href="../../pages/terminos-de-uso/terminos-de-uso.html">Términos de uso</a>
+                <a class="text-light text-decoration-none" href="../../pages/politica-de-privacidad/politica-de-privacidad.html"> Política de privacidad</a>
             </p>
         </div>
     </footer>`;

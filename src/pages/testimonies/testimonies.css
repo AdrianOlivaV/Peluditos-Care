@@ -2,6 +2,42 @@ div{
         font-family: 'Baloo 2', sans-serif;
 }
 
+#btn-save-testimonie{
+    background-color: #24527A;
+    border: none;
+    outline: none;
+}
+
+.btn-edit{
+    background-color: #24527A;
+    border: none;
+    outline: none;
+}
+
+.btn-delete{
+    background-color: #aa1b1b;
+    border: none;
+    outline: none;
+}
+
+#add-testimonie{
+    background-color: #24527A;
+    border: none;
+    outline: none;
+}
+
+#delete-all{
+    background-color: #24527a93;
+    border: none;
+    outline: none;
+}
+
+#delete-all:hover{
+    background-color: #aa1b1b;
+    border: none;
+    outline: none;
+}
+
 
 /* estilos de footer */
 :root {

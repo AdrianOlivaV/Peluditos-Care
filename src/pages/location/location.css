@@ -16,24 +16,6 @@ body {
 
 }
 
-
-/* estilos de footer */
-:root {
-    --bg-footer: #5FBAD3;
-    --bg-body: #f8f8f8;
-}
-body{
-    background-color: var(--bg-body);
-}
-
-.bg-footer {
-    font-family:'Baloo 2', sans-serif;
-    background-color: var(--bg-footer);
-}
-a {
-    text-decoration: none;
-}
-
 /* Espacio debajo del header */
 #header {
   margin-bottom: 40px;
@@ -108,4 +90,24 @@ a {
   .map-container iframe {
     height: 250px;
   }
+}
+
+/* Estilos footer */
+
+:root {
+  --bg-footer: #5FBAD3;
+  --bg-body: #f8f8f8;
+}
+
+body {
+  background-color: var(--bg-body);
+}
+
+.bg-footer {
+  font-family: 'Baloo 2', sans-serif;
+  background-color: var(--bg-footer);
+}
+
+a {
+  text-decoration: none;
 }
