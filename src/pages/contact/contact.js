@@ -8,14 +8,14 @@ footer(document.getElementById("footer"));
 
 //---------------------------------------------
 
-const registerFrom = document.getElementById("formulario");
+const registerForm = document.getElementById("form");
 
-registerFrom.addEventListener("submit", async (e) => {
+registerForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // evita que se envíe el formulario
     console.log("Manejo del formulario");
 
     // Obtener los datos del formulario.
-    const newConsult = leerInputsFormulario(registerFrom);
+    const newConsult = leerInputsFormulario(registerForm);
     const validatedUser = isUserValid(newConsult);
      console.log(newConsult);
 
