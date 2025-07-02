@@ -31,9 +31,6 @@ public class ServiceRequest {
     @JoinColumn(name = "fk_service_cost", nullable = false)
     private ServiceCost serviceCost;
 
-    @OneToOne(mappedBy = "serviceRequest", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private UserReview userReview;
-
     @OneToMany(mappedBy = "serviceRequest", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<ServiceRequestPet> serviceRequestPets = new HashSet<>();
 
@@ -85,14 +82,6 @@ public class ServiceRequest {
 		this.serviceCost = serviceCost;
 	}
 
-	public UserReview getUserReview() {
-		return userReview;
-	}
-
-	public void setUserReview(UserReview userReview) {
-		this.userReview = userReview;
-	}
-
 	public Set<ServiceRequestPet> getServiceRequestPets() {
 		return serviceRequestPets;
 	}
@@ -114,7 +103,6 @@ public class ServiceRequest {
 		this.user = user;
 		this.caregiver = caregiver;
 		this.serviceCost = serviceCost;
-		this.userReview = userReview;
 		this.serviceRequestPets = serviceRequestPets;
 	}
 
@@ -134,7 +122,6 @@ public class ServiceRequest {
 		builder.append(", serviceCost=");
 		builder.append(serviceCost);
 		builder.append(", userReview=");
-		builder.append(userReview);
 		builder.append(", serviceRequestPets=");
 		builder.append(serviceRequestPets);
 		builder.append("]");

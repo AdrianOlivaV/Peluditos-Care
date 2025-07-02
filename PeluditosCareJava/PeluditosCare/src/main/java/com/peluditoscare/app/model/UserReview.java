@@ -24,9 +24,6 @@ public class UserReview {
     @JoinColumn(name = "fk_reviewed_user", nullable = false)
     private Users reviewedUser;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_service_requests", nullable = false)
-    private ServiceRequest serviceRequest;
 
 	public Long getId_user_reviews() {
 		return id_user_reviews;
@@ -67,14 +64,6 @@ public class UserReview {
 	public void setReviewedUser(Users reviewedUser) {
 		this.reviewedUser = reviewedUser;
 	}
-
-	public ServiceRequest getServiceRequest() {
-		return serviceRequest;
-	}
-
-	public void setServiceRequest(ServiceRequest serviceRequest) {
-		this.serviceRequest = serviceRequest;
-	}
 	
 	public UserReview() {
 		
@@ -88,7 +77,6 @@ public class UserReview {
 		this.description = description;
 		this.reviewer = reviewer;
 		this.reviewedUser = reviewedUser;
-		this.serviceRequest = serviceRequest;
 	}
 
 	@Override
@@ -105,7 +93,6 @@ public class UserReview {
 		builder.append(", reviewedUser=");
 		builder.append(reviewedUser);
 		builder.append(", serviceRequest=");
-		builder.append(serviceRequest);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -38,7 +38,7 @@ public class Users {
     @Column(name = "name", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "about_me", columnDefinition = "TEXT") 
+    @Column(name = "about_me", columnDefinition = "TEXT", nullable = false) 
     private String about_me;
 
     @Column(name = "email", length = 255, nullable = false, unique = true) 
@@ -50,7 +50,7 @@ public class Users {
     @Column(name = "street", length = 255, nullable = false)
     private String street;
 
-    @Column(name = "url_profile_picture", columnDefinition = "TEXT") 
+    @Column(name = "url_profile_picture", columnDefinition = "TEXT", nullable = false) 
     private String url_profile_picture;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

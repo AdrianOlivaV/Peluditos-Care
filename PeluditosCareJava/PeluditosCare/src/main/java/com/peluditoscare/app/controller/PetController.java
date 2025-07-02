@@ -1,7 +1,11 @@
 package com.peluditoscare.app.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,22 +19,33 @@ import com.peluditoscare.app.service.PetService;
 @RequestMapping("/api/v1/pets")
 public class PetController {
 	
-	PetService petService;
+	private final PetService petService;
 
 	public PetController(PetService petService) {
 		this.petService = petService;
 	}
 	
 	@GetMapping
-	Iterable<Pet> getallUsers(){
+	ResponseEntity<Iterable<Pet>> getallUsers(){
 		Iterable<Pet> service = petService.findAllPets();
-		return service;
+		return ResponseEntity.ok(service);
 	}
 	
 	@PostMapping
-	Pet createPet(@RequestBody Pet pet) {
+	ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
 		Pet newPet = petService.savePet(pet);
-		return newPet;
+		return new ResponseEntity<Pet>(newPet, HttpStatus.CREATED);
 	}
 	
+	@GetMapping("/{id}")
+	Pet getPetById(@PathVariable("id") Long id) {
+		Pet existingPet = petService.findPetById(id);
+		return existingPet;
+	}
+	
+	@DeleteMapping("/{id}")
+	ResponseEntity<Void> deletePet(@PathVariable("id") Long id) {
+		petService.deletePetById(id);
+		return ResponseEntity.noContent().build();
+	}
 }

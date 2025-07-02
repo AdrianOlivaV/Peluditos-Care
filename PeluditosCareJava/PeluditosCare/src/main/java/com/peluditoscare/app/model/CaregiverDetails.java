@@ -20,7 +20,7 @@ public class CaregiverDetails {
     @Column(name = "permit_details", length = 500, nullable = false)
     private String permit_details;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     private String description;
 
     @OneToOne(fetch = FetchType.LAZY)

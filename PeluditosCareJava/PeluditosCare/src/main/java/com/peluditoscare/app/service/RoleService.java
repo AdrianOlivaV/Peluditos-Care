@@ -1,8 +1,6 @@
 package com.peluditoscare.app.service;
 
-import java.util.Set;
 
-import com.peluditoscare.app.model.Users;
 import com.peluditoscare.app.model.Roles;
 
 public interface RoleService {
@@ -10,14 +8,12 @@ public interface RoleService {
 
     Roles findById(Long id);
 
-    Roles save(Users user);
+    Roles save(Roles role);
     
 
-    Roles update(Long id, Users user);
+    Roles update(Long id, Roles role);
 
     void deleteById(Long id);
 
-    Set<String> getUsersWithSpecificRoleId(Long id);
 
-	Roles save(Roles role);
 }

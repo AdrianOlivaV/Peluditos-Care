@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "service_cost")
 public class ServiceCost {
@@ -18,12 +20,14 @@ public class ServiceCost {
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     private String description;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_type_services", nullable = false)
     private TypeService typeService;
-
-    @OneToMany(mappedBy = "serviceCost", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "serviceCost", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<ServiceRequest> serviceRequests = new HashSet<>();
 
 	public Long getId() {
