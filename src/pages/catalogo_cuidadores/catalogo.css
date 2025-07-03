@@ -1,12 +1,12 @@
-.ideal{
+.ideal {
     margin: 2% 0px 5% 0px;
 }
 
-.buscar-boton{
+.buscar-boton {
     margin-left: 1%;
 }
 
-.search-container{
+.search-container {
     display: flex;
     flex-direction: row;
 }
@@ -26,20 +26,38 @@ input.hs-search-field__input {
 }
 
 .card {
-  border-radius: .7rem;
-  min-width: fit-content;
-  margin-top: 5%;
+    border-radius: .7rem;
+    min-width: fit-content;
+    margin-top: 5%;
 }
 
-.review-pata{
+.review-pata {
     height: 20px;
     width: 22px;
 }
 
-.pagination{
+.pagination {
     margin-top: 2%;
 }
 
-.titulo{
+.titulo {
     margin-left: 5%;
+}
+
+:root {
+    --bg-footer: #5FBAD3;
+    --bg-body: #f8f8f8;
+}
+
+body {
+    background-color: var(--bg-body);
+}
+
+.bg-footer {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: var(--bg-footer);
+}
+
+a {
+    text-decoration: none;
 }
