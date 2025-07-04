@@ -26,9 +26,6 @@ public class Users {
     @Column(name = "city", length = 45, nullable = false)
     private String city;
 
-    @Column(name = "colony", length = 45, nullable = true)
-    private String colony;
-
     @Column(name = "last_name", length = 100, nullable = false)
     private String last_name;
 
@@ -112,14 +109,6 @@ public class Users {
 
 	public void setCity(String city) {
 		this.city = city;
-	}
-
-	public String getColony() {
-		return colony;
-	}
-
-	public void setColony(String colony) {
-		this.colony = colony;
 	}
 
 	public String getLast_name() {
@@ -245,7 +234,7 @@ public class Users {
 	public Users () {
 		
 	}
-	public Users(Long id_users, LocalDate birthdate, String zip_code, String phone_number, String city, String colony,
+	public Users(Long id_users, LocalDate birthdate, String zip_code, String phone_number, String city,
 			String last_name, String name, String about_me, String email, String password, String street,
 			String url_profile_picture, String passwordconf, Set<UserRole> userRoles, Set<UserReview> givenReviews,
 			Set<UserReview> receivedReviews, Set<ServiceRequest> requestedServices,
@@ -256,7 +245,6 @@ public class Users {
 		this.zip_code = zip_code;
 		this.phone_number = phone_number;
 		this.city = city;
-		this.colony = colony;
 		this.last_name = last_name;
 		this.name = name;
 		this.about_me = about_me;
@@ -288,7 +276,6 @@ public class Users {
 		builder.append(", city=");
 		builder.append(city);
 		builder.append(", colony=");
-		builder.append(colony);
 		builder.append(", last_name=");
 		builder.append(last_name);
 		builder.append(", name=");

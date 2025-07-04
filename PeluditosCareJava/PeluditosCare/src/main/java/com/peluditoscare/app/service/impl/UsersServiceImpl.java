@@ -62,7 +62,6 @@ public class UsersServiceImpl implements UsersService{
 		existingUser.setBirthdate(user.getBirthdate());
 		existingUser.setAbout_me(user.getAbout_me());
 		existingUser.setCity(user.getCity());
-		existingUser.setColony(user.getColony());
 		existingUser.setEmail(user.getEmail());
 		existingUser.setLast_name(user.getLast_name());
 		existingUser.setPassword(user.getPassword());
