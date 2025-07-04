@@ -1,0 +1,178 @@
+body {
+  font-family: 'Baloo 2', sans-serif;
+  color: #000;
+  line-height: 1.6;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Baloo 2', sans-serif;
+}
+
+
+.quienes-somos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: justify;
+}
+
+.quienes-somos section {
+  max-width: 800px;
+}
+
+#h1-style,
+.nuestro-equipo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2rem;
+  text-align: center;
+
+}
+
+.fw-medium {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2e2e2e;
+  font-size: 1.2rem;
+}
+
+/* SECCIÓN DE EQUIPO DIRECTIVO  */
+.equipo-section {
+  font-family: 'Baloo 2', sans-serif;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  background-image: url('../../../public/images/fondo-equipodirectivo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.equipo-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(71, 68, 68, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipo-grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipo-grid article:nth-child(9) {
+  grid-column: 2;
+}
+
+.equipo-grid article:nth-child(10) {
+  grid-column: 3;
+}
+
+.figcaption-nombres {
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+
+.equipo-grid img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+@media (max-width: 1024px) {
+  .equipo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equipo-grid article:nth-child(9),
+  .equipo-grid article:nth-child(10) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nuestro-equipo {
+    font-size: 1.8rem;
+  }
+
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .equipo-grid img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .equipo-contenido {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nuestro-equipo {
+    font-size: 1.5rem;
+  }
+
+  .equipo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipo-grid img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .equipo-contenido {
+    padding: 1rem;
+  }
+}
+
+/* Estilos footer */
+
+:root {
+  --bg-footer: #5FBAD3;
+  --bg-body: #f8f8f8;
+}
+
+body {
+  background-color: var(--bg-body);
+}
+
+.bg-footer {
+  font-family: 'Baloo 2', sans-serif;
+  background-color: var(--bg-footer);
+}
+
+a {
+  text-decoration: none;
+}

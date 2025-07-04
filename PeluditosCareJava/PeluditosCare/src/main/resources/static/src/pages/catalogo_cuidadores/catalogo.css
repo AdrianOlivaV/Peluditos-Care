@@ -1,0 +1,63 @@
+.ideal {
+    margin: 2% 0px 5% 0px;
+}
+
+.buscar-boton {
+    margin-left: 1%;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+}
+
+input.hs-search-field__input {
+    height: 40px;
+    width: 20%;
+    font-size: 14px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: none;
+}
+
+.card {
+    border-radius: .7rem;
+    min-width: fit-content;
+    margin-top: 5%;
+}
+
+.review-pata {
+    height: 20px;
+    width: 22px;
+}
+
+.pagination {
+    margin-top: 2%;
+}
+
+.titulo {
+    margin-left: 5%;
+}
+
+:root {
+    --bg-footer: #5FBAD3;
+    --bg-body: #f8f8f8;
+}
+
+body {
+    background-color: var(--bg-body);
+}
+
+.bg-footer {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: var(--bg-footer);
+}
+
+a {
+    text-decoration: none;
+}
