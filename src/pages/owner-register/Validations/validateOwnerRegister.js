@@ -1,4 +1,4 @@
-import { validateOwnerName } from "./validateOwnerName.js"
+import { validateOwnerName } from "./validateOwnerName.js";
 import { validateOwnerLastName } from "./validateOwnerLastName.js";
 import { validateOwnerBirthDate } from "./validateOwnerBirthDate.js";
 import { validateOwnerEmail } from "./validateOwnerEmail.js";
@@ -8,67 +8,79 @@ import { validateExtraFields } from "./ValidateExtraFields.js";
 import { validatePetPhoto } from "./validatePetPhoto.js";
 
 /**
- * 
+ * Valida que los datos ingresados al formulario sean correctos
  * @param {*} user 
  */
-//Valida que los datos ingresados a el formualrio sean correctos
 const isNewRegisterValid = (user) => {
     const result = {
         isValid: true,
         errors: []
     };
 
-    //validacion del nombre
-    const nameValidation = validateOwnerName(user.nombre);
+    // validación del nombre
+    const nameValidation = validateOwnerName(user.name);
     if (nameValidation.isValid === false) {
         result.isValid = false;
         result.errors.push(...nameValidation.errors);
     }
-    //validacion del apellido
-    const lastNameValidation = validateOwnerLastName(user.apellido);
+
+    // validación del apellido
+    const lastNameValidation = validateOwnerLastName(user.last_name);
     if (lastNameValidation.isValid === false) {
         result.isValid = false;
         result.errors.push(...lastNameValidation.errors);
     }
-    //validacion de edad
-    const birthDateValidation = validateOwnerBirthDate(user.fecha);
+
+    // validación de fecha de nacimiento
+    const birthDateValidation = validateOwnerBirthDate(user.birthdate);
     if (birthDateValidation.isValid === false) {
         result.isValid = false;
         result.errors.push(...birthDateValidation.errors);
     }
-    //validacion de correo
-    const ownerEmailValidation = validateOwnerEmail(user.correo);
+
+    // validación del correo
+    const ownerEmailValidation = validateOwnerEmail(user.email);
     if (ownerEmailValidation.isValid === false) {
         result.isValid = false;
         result.errors.push(...ownerEmailValidation.errors);
     }
-    //validacion de Telefono
-    const ownerTelValidation = validateOwnerTel(user.telefono);
+
+    // validación del teléfono
+    const ownerTelValidation = validateOwnerTel(user.phone_number);
     if (ownerTelValidation.isValid === false) {
         result.isValid = false;
-        result.errors.push(...ownerEmailValidation.errors);
+        result.errors.push(...ownerTelValidation.errors);
     }
-    // Validación de contraseña
-    const passwordValidation = validateOwnerPassword(user.contraseña, user.confContraseña);
+
+    // validación de contraseña
+    const passwordValidation = validateOwnerPassword(user.password, user.passwordconf);
     if (passwordValidation.isValid === false) {
         result.isValid = false;
         result.errors.push(...passwordValidation.errors);
     }
-    // Validación del resto de campos
+
+    // validación de campos extra
     const extraFieldsValidation = validateExtraFields(user);
     if (!extraFieldsValidation.isValid) {
         result.isValid = false;
         result.errors.push(...extraFieldsValidation.errors);
     }
-    // Validación de foto de la mascota
-    const petPhotoValidation = validatePetPhoto(user.imagenMascota);
-    if (!petPhotoValidation.isValid) {
-        result.isValid = false;
-        result.errors.push(...petPhotoValidation.errors);
+
+    // validación de foto de la mascota (protegido para evitar errores)
+    if (user.pets && user.pets.length > 0) {
+        const pet = user.pets[0];
+        const petPhotoValidation = validatePetPhoto(pet.picture);
+        if (!petPhotoValidation.isValid) {
+            result.isValid = false;
+            result.errors.push(...petPhotoValidation.errors);
+        }
+    } else {
+        // Si no hay mascotas, opcional: puedes decidir si es error o no
+        // result.isValid = false;
+        // result.errors.push("No hay datos de mascotas para validar la foto.");
     }
 
     return result;
-
 };
 
 export { isNewRegisterValid };

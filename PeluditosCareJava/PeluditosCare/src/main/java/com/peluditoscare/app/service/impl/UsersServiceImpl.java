@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import com.peluditoscare.app.model.Pet;
 import com.peluditoscare.app.model.Users;
 import com.peluditoscare.app.repository.UsersRepository;
 import com.peluditoscare.app.service.UsersService;
@@ -40,9 +41,17 @@ public class UsersServiceImpl implements UsersService{
 	@Override
 	@Transactional
 	public Users save(Users user) {
-		user.setId_users(null);
-		Users newUsers = userRepository.save(user);
-		return newUsers;
+	    user.setId_users(null);
+
+	    // Asignar el owner a cada mascota para que no falle la FK en la DB
+	    if (user.getPets() != null) {
+	        for (Pet pet : user.getPets()) {
+	            pet.setOwner(user);
+	        }
+	    }
+
+	    Users newUser = userRepository.save(user);
+	    return newUser;
 	}
 
 	@Override
@@ -59,7 +68,6 @@ public class UsersServiceImpl implements UsersService{
 		existingUser.setPassword(user.getPassword());
 		existingUser.setPhone_number(user.getPhone_number());
 		existingUser.setStreet(user.getStreet());
-		existingUser.setStreet_number(user.getStreet_number());
 		existingUser.setUrl_profile_picture(user.getUrl_profile_picture());
 		existingUser.setZip_code(user.getZip_code());
 		Users updatedUser = userRepository.save( existingUser );

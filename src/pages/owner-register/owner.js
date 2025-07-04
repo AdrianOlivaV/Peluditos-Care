@@ -12,7 +12,7 @@ footer(document.getElementById("footer"));
 const inputFoto = document.getElementById("petPhoto");
 const previewImg = document.getElementById("previewPetPhoto");
 
-inputFoto.addEventListener("change", () => {
+/* inputFoto.addEventListener("change", () => {
   const archivo = inputFoto.files[0];
 
   if (archivo) {
@@ -28,7 +28,7 @@ inputFoto.addEventListener("change", () => {
     previewImg.src = "";
     previewImg.style.display = "none"; // oculta si no hay imagen
   }
-});
+}); */
 //-------------------------------------------------------------------
 // envio del formulario
 const ownerRegisterForm = document.getElementById("ownerForm");
@@ -50,8 +50,8 @@ ownerRegisterForm.addEventListener("submit", async (e) => {
     //si los datos son validos, se envia el formulario usando el api fetch
     try {
       //hacer el envio del formulario
-      const response = await postNewRegister(newRegister, "https://reqres.in/api/users");
-      alert("Formulario enviado correctamente " + response.createdAt);
+      const response = await postNewRegister(newRegister, "http://localhost:8080/api/v1/users");
+      alert("Formulario enviado correctamente ");
       //Limpiar formulario después de enviarlo correctamente
       ownerRegisterForm.reset();
       // limpiar vista previa de la imagem

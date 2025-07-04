@@ -23,13 +23,10 @@ public class Users {
     @Column(name = "phone_number", length = 20, nullable = false)
     private String phone_number;
 
-    @Column(name = "street_number", length = 20, nullable = false)
-    private String street_number;
-
     @Column(name = "city", length = 45, nullable = false)
     private String city;
 
-    @Column(name = "colony", length = 45, nullable = false)
+    @Column(name = "colony", length = 45, nullable = true)
     private String colony;
 
     @Column(name = "last_name", length = 100, nullable = false)
@@ -50,8 +47,11 @@ public class Users {
     @Column(name = "street", length = 255, nullable = false)
     private String street;
 
-    @Column(name = "url_profile_picture", columnDefinition = "TEXT", nullable = false) 
+    @Column(name = "url_profile_picture", columnDefinition = "TEXT", nullable = true) 
     private String url_profile_picture;
+    
+    @Column(name = "passwordconf", length = 255, nullable = false)
+    private String passwordconf;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<UserRole> userRoles = new HashSet<>();
@@ -104,14 +104,6 @@ public class Users {
 
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
-	}
-
-	public String getStreet_number() {
-		return street_number;
-	}
-
-	public void setStreet_number(String street_number) {
-		this.street_number = street_number;
 	}
 
 	public String getCity() {
@@ -186,6 +178,14 @@ public class Users {
 		this.url_profile_picture = url_profile_picture;
 	}
 
+	public String getPasswordconf() {
+		return passwordconf;
+	}
+
+	public void setPasswordconf(String passwordconf) {
+		this.passwordconf = passwordconf;
+	}
+
 	public Set<UserRole> getUserRoles() {
 		return userRoles;
 	}
@@ -242,13 +242,12 @@ public class Users {
 		this.pets = pets;
 	}
 	
-	public Users() {
+	public Users () {
 		
 	}
-	
-	public Users(Long id_users, LocalDate birthdate, String zip_code, String phone_number, String street_number,
-			String city, String colony, String last_name, String name, String about_me, String email, String password,
-			String street, String url_profile_picture, Set<UserRole> userRoles, Set<UserReview> givenReviews,
+	public Users(Long id_users, LocalDate birthdate, String zip_code, String phone_number, String city, String colony,
+			String last_name, String name, String about_me, String email, String password, String street,
+			String url_profile_picture, String passwordconf, Set<UserRole> userRoles, Set<UserReview> givenReviews,
 			Set<UserReview> receivedReviews, Set<ServiceRequest> requestedServices,
 			Set<ServiceRequest> providedServices, CaregiverDetails caregiverDetails, Set<Pet> pets) {
 		super();
@@ -256,7 +255,6 @@ public class Users {
 		this.birthdate = birthdate;
 		this.zip_code = zip_code;
 		this.phone_number = phone_number;
-		this.street_number = street_number;
 		this.city = city;
 		this.colony = colony;
 		this.last_name = last_name;
@@ -266,6 +264,7 @@ public class Users {
 		this.password = password;
 		this.street = street;
 		this.url_profile_picture = url_profile_picture;
+		this.passwordconf = passwordconf;
 		this.userRoles = userRoles;
 		this.givenReviews = givenReviews;
 		this.receivedReviews = receivedReviews;
@@ -286,8 +285,6 @@ public class Users {
 		builder.append(zip_code);
 		builder.append(", phone_number=");
 		builder.append(phone_number);
-		builder.append(", street_number=");
-		builder.append(street_number);
 		builder.append(", city=");
 		builder.append(city);
 		builder.append(", colony=");
@@ -306,6 +303,8 @@ public class Users {
 		builder.append(street);
 		builder.append(", url_profile_picture=");
 		builder.append(url_profile_picture);
+		builder.append(", passwordconf=");
+		builder.append(passwordconf);
 		builder.append(", userRoles=");
 		builder.append(userRoles);
 		builder.append(", givenReviews=");
@@ -323,6 +322,8 @@ public class Users {
 		builder.append("]");
 		return builder.toString();
 	}
+
+
     
 }
 

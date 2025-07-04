@@ -82,7 +82,7 @@
                 </div>
                 <div class="petData col-lg-5 col-md-5 col-sm-8 bg-glass rounded-4 shadow">
                     <legend class="text-center mb-4">Información de tu Mascota</legend>
-                    <fieldset class="pet-info">
+                    <fieldset id="petInfo" class="pet-info">
                         <label for="petName" class="form-label">Nombre de tu mascota</label>
                         <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota"
                             class="form-control mb-3" required />
@@ -108,10 +108,10 @@
                             class="form-control mb-3" rows="3" required></textarea>
                         <fieldset class="pet-photo">
                             <h6 class="text-center"><em>Foto de la mascota</em></h6>
-                            <input type="file" id="petPhoto" name="petPhoto" accept="image/*" class="form-control mb-3"
+                            <input id="petPhoto" name="petPhoto" class="form-control mb-3" placeholder="URL de Imagen"
                                 required />
                             <img id="previewPetPhoto" alt="Vista previa" />
-                        </fieldset>
+                    </fieldset>
                 </div>
                 <div class="form-check col-4" id="terms">
 
